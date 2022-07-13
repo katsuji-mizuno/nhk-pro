@@ -1,0 +1,23 @@
+@charset 'utf-8';
+@import 'mixin';
+
+h1{
+  max-width: 1320px;
+  margin: 60px auto 0px;
+  padding: 0 0 10px;
+  border-bottom:4px solid #000 ;
+  @include mediaSP{
+    font-size: 20px;
+    margin: 20px auto 0px;
+  }
+}
+
+
+section.post_wrap{
+  max-width: 1320px;
+  margin: 0px auto 0px;
+  padding: 0 20px;
+  @include mediaSP{
+    padding: 0 15px;
+  }
+}

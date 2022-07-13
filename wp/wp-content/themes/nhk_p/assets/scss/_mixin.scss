@@ -1,0 +1,68 @@
+/***********************共通設定************************/
+
+$text: #211712;
+$link: #00196b;
+
+
+//break point
+$w_sp: 750px;
+$w_sml: 1000px;
+$w_mid: 1320px;
+$w_lrg: 1500px;
+
+
+
+@mixin mediaSP {  /* 750以下  */
+  @media all and (max-width: $w_sp) {@content;}
+}
+@mixin mediaPC {  /* 751以上 */
+  @media all and (min-width: $w_sp + 1) {@content;}
+}
+
+@mixin mediaSMLmax {  /* 1000以下  */
+  @media all and (max-width: $w_sml) {@content;}
+}
+
+@mixin mediaSMLmin {  /* 1001以上  */
+  @media all and (min-width: $w_sml + 1) {@content;}
+}
+
+@mixin mediaMIDmax {  /* 1300以下  */
+  @media all and (max-width: $w_mid) {@content;}
+}
+
+@mixin mediaMIDmin {  /* 1301以上  */
+  @media all and (min-width: $w_mid + 1) {@content;}
+}
+
+@mixin mediaLRGmax {  /* 1500以下  */
+  @media all and (max-width: $w_lrg ) {@content;}
+}
+
+@mixin mediaLRGmin {  /* 1501以上  */
+  @media all and (min-width: $w_lrg + 1) {@content;}
+}
+
+
+@mixin cont {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+}
+
+@mixin trans {  transition: all .3s;}
+
+br{
+  &.sp{
+    @include mediaPC{
+      display: none;
+    }
+  }
+  &.pc{
+    @include mediaSP{
+      display: none;
+    }
+  }
+}

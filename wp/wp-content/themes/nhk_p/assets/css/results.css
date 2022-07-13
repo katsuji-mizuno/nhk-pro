@@ -1,0 +1,509 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+br.sp {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  br.sp {
+    display: none;
+  }
+}
+br.pc {
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  br.pc {
+    display: none;
+  }
+}
+
+.top_contents {
+  max-width: 1320px;
+  padding: 0 20px;
+  margin: 0 auto 80px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .top_contents {
+    padding: 0 12px;
+  }
+}
+
+h2 {
+  text-align: left;
+  position: relative;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  h2 {
+    text-align: center;
+  }
+}
+
+.anchor_link {
+  background: #F5F5F5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 20px 0;
+  margin: 40px 0 0;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .anchor_link {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+.anchor_link a {
+  /* 750以下  */
+  position: relative;
+}
+@media all and (max-width: 750px) {
+  .anchor_link a {
+    width: 50%;
+  }
+}
+.anchor_link a::before, .anchor_link a::after {
+  content: "";
+  position: absolute;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.anchor_link a::before {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid #000;
+  left: -20px;
+  top: 10px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .anchor_link a::before {
+    left: 12px;
+    top: 8px;
+  }
+}
+.anchor_link a::after {
+  width: 0%;
+  height: 1px;
+  background: #000;
+  left: 0;
+  bottom: 0;
+}
+.anchor_link a:hover::before {
+  top: 13px;
+}
+.anchor_link a:hover::after {
+  width: 100%;
+}
+
+.caution {
+  display: none;
+  margin: 40px 0;
+  /* 750以下  */
+  border: 1px solid #E54B53;
+}
+@media all and (max-width: 750px) {
+  .caution {
+    margin: 10px 0 40px;
+  }
+}
+.caution.exhibition {
+  display: block;
+}
+.caution span {
+  background: #E54B53;
+  color: #fff;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px;
+}
+.caution p {
+  padding: 20px;
+  color: #E54B53;
+}
+
+.matrix_wrap {
+  margin: 10px 0;
+}
+
+/* 751以上 */
+@media all and (min-width: 751px) {
+  .matrix_l {
+    width: 30%;
+  }
+  .matrix_l br {
+    display: none;
+  }
+
+  .matrix_c {
+    width: 40%;
+  }
+
+  .matrix_r {
+    width: 30%;
+  }
+}
+.matrix_tit {
+  /* 750以下  */
+  background: #F5F5F5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-weight: bold;
+  /* 751以上 */
+}
+@media all and (max-width: 750px) {
+  .matrix_tit {
+    display: none;
+  }
+}
+@media all and (min-width: 751px) {
+  .matrix_tit {
+    border: 1px solid #707070;
+    border-bottom: 1px solid #707070;
+  }
+}
+.matrix_tit div {
+  /* 751以上 */
+  padding: 10px;
+}
+@media all and (min-width: 751px) {
+  .matrix_tit div {
+    border-right: 1px solid #707070;
+  }
+  .matrix_tit div:last-child {
+    border-right: none;
+  }
+}
+
+.matrix_info {
+  font-size: 13px;
+  /* 751以上 */
+  /* 750以下  */
+}
+@media all and (min-width: 751px) {
+  .matrix_info {
+    font-size: 14px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+.matrix_info div {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .matrix_info div {
+    padding: 10px;
+    border: 1px solid #707070;
+    border-top: 0;
+    border-right: 0;
+  }
+  .matrix_info div:last-child {
+    border-right: 1px solid #707070;
+  }
+}
+@media all and (max-width: 750px) {
+  .matrix_info {
+    padding: 10px;
+  }
+  .matrix_info .matrix_l span, .matrix_info .matrix_c span, .matrix_info .matrix_r span {
+    position: relative;
+    padding: 5px 0 5px 85px;
+    display: block;
+  }
+  .matrix_info .matrix_l span::before, .matrix_info .matrix_c span::before, .matrix_info .matrix_r span::before {
+    position: absolute;
+    left: 0px;
+    color: #919191;
+  }
+  .matrix_info .matrix_l br {
+    display: none;
+  }
+  .matrix_info .matrix_l span::before {
+    content: "開催年月";
+  }
+  .matrix_info .matrix_c {
+    /* 751以上 */
+  }
+}
+@media all and (max-width: 750px) and (min-width: 751px) {
+  .matrix_info .matrix_c {
+    width: 50%;
+  }
+}
+@media all and (max-width: 750px) {
+  .matrix_info .matrix_c span::before {
+    content: "事業名";
+  }
+}
+@media all and (max-width: 750px) {
+  .matrix_info .matrix_r {
+    /* 751以上 */
+  }
+}
+@media all and (max-width: 750px) and (min-width: 751px) {
+  .matrix_info .matrix_r {
+    width: 30%;
+  }
+}
+@media all and (max-width: 750px) {
+  .matrix_info .matrix_r span::before {
+    content: "開催会場";
+  }
+}
+
+.result_list {
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .result_list {
+    border: 1px solid #707070;
+    border-top: 0;
+  }
+  .result_list.no {
+    position: relative;
+  }
+  .result_list.no::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    height: 10px;
+    top: -5px;
+  }
+}
+
+.result_year {
+  font-weight: bold;
+  color: #fff;
+  background: #F5F5F5;
+  padding: 10px;
+  /* 750以下  */
+  /* 751以上 */
+}
+@media all and (max-width: 750px) {
+  .result_year {
+    margin: 10px 0 0;
+    border-top: 1px solid #707070;
+    border-bottom: 1px solid #707070;
+  }
+}
+@media all and (min-width: 751px) {
+  .result_year {
+    border: 1px solid #707070;
+    border-top: 0px;
+  }
+}
+
+.no_year {
+  position: relative;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .no_year::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    border-top: 2px dotted #707070;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 95%;
+  }
+}
+
+.matrix_wrap#exhibition .result_year {
+  background: #FF8800;
+}
+.matrix_wrap#stage .result_year {
+  background: #1C3271;
+}
+.matrix_wrap#family .result_year {
+  background: #FF584B;
+}
+.matrix_wrap#event .result_year {
+  background: #A460C1;
+}
+
+/*====================================================================
+カテゴリーごとの表示
+====================================================================*/
+.category_wrap {
+  text-align: left;
+}
+.category_wrap li:last-child {
+  margin: 0;
+}
+.category_wrap li a {
+  color: #000;
+}
+.category_wrap li a .post_thum {
+  overflow: hidden;
+}
+.category_wrap li a .post_thum img {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.category_wrap li a:hover {
+  color: #00196b;
+}
+.category_wrap li a:hover .post_thum img {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.category_wrap li.post_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.category_wrap li.post_wrap .day br {
+  display: none;
+}
+.category_wrap h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .category_wrap h3 {
+    height: auto;
+    font-size: 13px;
+  }
+}
+.category_wrap h3 a {
+  position: relative;
+}
+.category_wrap h3 a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background: #00196b;
+  left: 0;
+  bottom: -5px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.category_wrap h3 a:hover::after {
+  width: 100%;
+}
+
+.list_link a {
+  font-weight: bold;
+  position: relative;
+  padding: 20px 40px;
+}
+.list_link a::after {
+  content: "";
+  position: absolute;
+  background-image: url(../images/top/arrow_bk.png);
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  right: 0;
+  top: 18px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.list_link.pc {
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .list_link.pc {
+    display: none;
+  }
+}
+.list_link.pc a:hover::after {
+  right: 10px;
+}
+.list_link.sp {
+  font-size: 16px;
+  text-align: right;
+  margin: 20px 0 40px;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .list_link.sp {
+    display: none;
+  }
+}
+.list_link.sp a {
+  padding: 20px 24px 20px 0;
+}
+.list_link.sp a::after {
+  width: 22px;
+  height: 22px;
+  top: 17px;
+}
+
+/*====================================================================
+会期や場所のレイアウト
+====================================================================*/
+.field {
+  font-size: 14px;
+}
+.field ul {
+  display: block;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .field ul {
+    margin: 12px 0 0;
+  }
+}
+.field li {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  margin: 5px 0;
+}
+.field div {
+  background: #000;
+  color: #fff;
+  width: 20%;
+  text-align: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.field p {
+  width: 77%;
+  font-size: 14px;
+  font-weight: bold;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .field p {
+    font-size: 13px;
+  }
+}
+/*# sourceMappingURL=results.css.map */

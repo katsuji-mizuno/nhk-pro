@@ -1,0 +1,207 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+br.sp {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  br.sp {
+    display: none;
+  }
+}
+br.pc {
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  br.pc {
+    display: none;
+  }
+}
+
+#main {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/*----------------------------------------------------
+記事リスト
+----------------------------------------------------*/
+h1 {
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  h1 {
+    border-bottom: 1px solid #000;
+  }
+}
+h1 span {
+  font-size: 20px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  h1 span {
+    font-size: 14px;
+  }
+}
+
+.post_single {
+  padding: 0px;
+}
+
+.post_single .post_tit {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .post_single .post_tit {
+    font-size: 22px;
+  }
+}
+
+section.post_wrap {
+  padding: 0;
+}
+
+.outline_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.outline_wrap.pc {
+  margin: 40px 0;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .outline_wrap.pc {
+    display: none;
+  }
+}
+.outline_wrap.sp {
+  margin: 20px 0;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .outline_wrap.sp {
+    display: none;
+  }
+}
+
+.outline {
+  text-align: left;
+  margin: 0 0 0 20px;
+  width: calc(100% - 140px);
+}
+
+.outline_text {
+  text-align: left;
+}
+.outline_text.sp {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .outline_text.sp {
+    display: none;
+  }
+}
+
+.post_tags {
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.job {
+  border-left: #19A7B3 3px solid;
+  padding: 0 0 0 10px;
+  font-size: 20px;
+}
+
+.outline_tit {
+  background: #000;
+  color: #fff;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 2px 10px;
+  margin: 20px 0 10px;
+}
+
+.outline_info {
+  margin: 0px 0px 20px;
+}
+
+.post_tags {
+  /* 750以下  */
+}
+.post_tags a {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 1px solid #000;
+  padding: 2px 10px;
+  background: #fff;
+  margin: 10px 10px 0 0;
+  white-space: nowrap;
+  display: block;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  /* 750以下  */
+}
+.post_tags a:hover {
+  color: #fff;
+  background: #19A7B3;
+}
+@media all and (max-width: 750px) {
+  .post_tags a {
+    display: block;
+    margin: 0 10px 5px 0;
+  }
+}
+@media all and (max-width: 750px) {
+  .post_tags {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+#post_content li {
+  text-align: left;
+}
+#post_content h2 {
+  text-align: left;
+  margin: 40px 0;
+}
+
+.kouen_thum {
+  width: 120px;
+}
+
+.wp-block-table table {
+  border: none;
+}
+
+.wp-block-table table tbody td {
+  border-right: none;
+  border-bottom: none;
+  text-align: left;
+  padding: 10px 10px 10px 0;
+  vertical-align: top;
+}
+.wp-block-table table tbody td:last-child {
+  width: 100%;
+}
+
+.wp-block-columns .wp-block-column:first-child {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+/*# sourceMappingURL=kouen_single.css.map */

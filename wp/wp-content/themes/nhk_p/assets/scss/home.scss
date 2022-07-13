@@ -1,0 +1,367 @@
+@charset 'utf-8';
+@import 'mixin';
+
+.top_contents {
+  max-width: 1320px;
+  padding: 0 20px;
+  margin: 0 auto 80px;
+  @include mediaSP{
+    padding: 0 12px;
+  }
+}
+
+h2{
+  text-align: left;
+  position: relative;
+  @include mediaSP{
+    text-align: center;
+  }
+}
+
+
+/*====================================================================
+カテゴリーごとの表示
+====================================================================*/
+.category_wrap{
+  text-align: left;
+  ul{
+    @include mediaPC{
+      display: flex;
+    }
+  }
+  li{
+    &:last-child{
+      margin: 0;
+    }
+    a{
+      color: #000;
+      .post_thum {
+        overflow: hidden;
+        img{
+          @include trans;
+        }
+      }
+      &:hover{
+        color: #00196b;
+        .post_thum {
+          img{
+            transform: scale(1.1);
+          }
+        }
+      }
+
+
+        img{
+          @include trans;
+        }
+        .open_icon{
+          height: 45px;
+          @include mediaSP{
+            height: auto;
+          }
+        }
+        /*開催中のアイコン*/
+        .btn{
+          /*アニメーションの起点とするためrelativeを指定*/
+          position: relative;
+          overflow: hidden;
+          /*ボタンの形状*/
+          text-decoration: none;
+          display: inline-block;
+          text-align: center;
+          outline: none;
+          border-radius: 40px;
+          padding: 2px 40px;
+          background: #FF8800;
+          border: solid 1px #FF8800;
+          z-index: 0;
+          /*アニメーションの指定*/
+          @include trans;
+          span{
+            color: #fff;
+            position: relative;
+            z-index: 3;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+          }
+        }
+
+        /*== 背景が流れる（左から右） */
+        .bgleft:before {
+          content: '';
+            /*絶対配置で位置を指定*/
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 2;
+            /*色や形状*/
+          background:#FF8800;/*背景色*/
+          width: 100%;
+          height: 100%;
+            /*アニメーション*/
+          transition: transform .6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+          transform: scale(0, 1);
+          transform-origin: right top;
+        }
+
+        &:hover{
+          img{
+            transform: scale(1.1);
+            opacity: 0.7;
+          }
+          .btn{
+            background: #FF8800;
+            span{
+              color:#FF8800;
+            }
+          }
+          .bgleft:before {
+            transform-origin:left top;
+            transform:scale(1, 1);
+            background:#fff;/*背景色*/
+
+          }
+        }
+
+
+
+
+    }
+    &.post_wrap {
+      @include mediaSP{
+        border-bottom: 1px solid #000000;
+        padding: 30px 0;
+        margin: 0px 0 0px;
+      }
+      @include mediaPC{
+        width: 22%;
+        margin: 0 0 0 60px;
+        &:first-child{
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  h3{
+    margin: 0 0 10px;
+    @include mediaSP{
+      height: auto;
+      margin: 0 0 10px;
+    }
+  }
+  @include mediaSP{
+    .post_set{
+      display: flex;
+      justify-content: space-between;
+    }
+    .post_thum{
+      width: 45%;
+    }
+    .field{
+      width: 50%;
+    }
+
+  }
+}
+
+.list_link{
+  a{
+    font-weight: bold;
+    position: relative;
+    padding: 20px 40px;
+    &::after{
+      content: "";
+      position: absolute;
+      background-image: url(../images/top/arrow_bk.png);
+      background-size: contain;
+      width: 20px;
+      height: 20px;
+      right: 0;
+      top: 18px;
+      @include trans;
+    }
+  }
+  &.pc{
+    @include mediaSP{
+      display: none;
+    }
+    a{
+      &:hover{
+        &::after{
+          right: 10px;
+        }
+      }
+    }
+  }
+  &.sp{
+    font-size: 16px;
+    text-align: right;
+    margin: 20px 0 40px;
+    @include mediaPC{
+      display: none;
+    }
+    a{
+      padding: 20px 24px 20px 0;
+      &::after{
+        width: 22px;
+        height: 22px;
+        top: 17px;
+      }
+    }
+  }
+}
+
+
+/*====================================================================
+会期や場所のレイアウト
+====================================================================*/
+.field{
+  font-size: 14px;
+  ul{
+    display: block;
+    @include mediaPC{
+      margin: 12px 0 0;
+    }
+  }
+  li{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 5px 0;
+  }
+  div{
+    background: #000;
+    color: #fff;
+    width: 20%;
+    text-align: center;
+    height: fit-content;
+  }
+  p{
+    width: 77%;
+    font-size: 14px;
+    font-weight: bold;
+    @include mediaSP{
+      font-size: 13px;
+    }
+  }
+}
+
+/*====================================================================
+slick
+====================================================================*/
+
+.slider_wrap{
+  margin: 0 auto;
+  padding: 40px 100px 0;
+
+  @include mediaSP{
+    padding: 15px 0;
+    margin: 0 calc(50% - 50vw);
+
+  }
+}
+
+.slider {
+  margin:0 auto;
+  position: relative;
+  img {
+  width:100%;/*スライダー内の画像を横幅100%に*/
+  height:auto;
+  }
+}
+
+.post_title{
+  a{
+    .slider_thum {
+      img{
+        @include mediaPC{
+          width: 80%;
+          margin: 0 auto;
+        }
+
+        @include trans;
+      }
+    }
+    &:hover{
+      .slider_thum {
+        img{
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+.slide-dots{
+  margin: 40px 0 0px;
+  display: flex;
+  justify-content: center;
+  @include mediaSP{
+    margin: 20px 0 0px;
+  }
+    li{
+      width: 80px;
+      height: 5px;
+      margin: 0 5px;
+      background-color: #9A9A9A;
+      @include mediaSP{
+        width: 40px;
+        height: 3px;
+        margin: 0 3px;
+      }
+      &.slick-active{
+        background-color: #000;
+    }
+    button{
+      visibility: hidden;
+    }
+  }
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+
+
+/*====================================================================
+twitter
+====================================================================*/
+
+.twitter_wrap{
+  max-width: 1320px;
+  padding: 80px 20px;
+  margin: 0 auto;
+  @include mediaSP{
+    padding: 50px 12px;
+  }
+  .category_tit {
+    padding: 0 0 32px;
+    @include mediaSP{
+      padding: 0 0 35px;
+    }
+  }
+}
+
+.twitter_inner {
+  overflow: scroll;
+  max-width: 1320px;
+  width: 60%;
+  background: #F7F7F7;
+
+  height: 500px;
+  margin: 0 auto;
+  @include mediaSP{
+    width: 90%;
+  }
+}
+
+.timeline-Header.timeline-InformationCircle-widgetParent {
+  display: none;
+}
+
+.timeline-Widget {
+  max-width: 100%;
+}

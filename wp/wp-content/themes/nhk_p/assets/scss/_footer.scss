@@ -1,0 +1,360 @@
+/*----------------------------------------------------
+loader
+----------------------------------------------------*/
+
+#loaderBg {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 10000;
+  background: #fff;
+}
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  pointer-events: none;
+  .loader-slide {
+    width: 100%;
+    height: 100%;
+    &.open {
+      animation-name: fadeOut;
+      animation-fill-mode: forwards;
+      animation-duration: 1.5s;
+      animation-delay: 0.3s;
+    }
+  }
+}
+.load_logo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  @include mediaPC{
+    width: 350px;
+    left: 50%;
+    margin-left: -175px;
+  }
+  @include mediaSP{
+    margin: 0 auto;
+    img{
+      width: 80%;
+    }
+  }
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+      }
+
+  to {
+    opacity: 0;
+  }
+}
+
+
+/*----------------------------------------------------
+トップに戻るボタン
+----------------------------------------------------*/
+
+#toPageTop {
+  position: absolute;
+  right: -30%;
+  bottom: 3%;
+  position: fixed;
+  z-index: 99;
+  width:22%;
+  max-width: 100px;
+  @include trans;
+  &.scrollfixed{
+    right: 10px;
+  }
+  a{
+    display: block;
+  }
+}
+
+.totop {
+  width:100%;
+  @include trans;
+  &:hover{
+    transform: scale(1.2);
+  }
+}
+
+/*----------------------------------------------------
+お問い合わせエリア
+----------------------------------------------------*/
+.footer_contact_wrap{
+  background: #0A3C54;
+  @include mediaSP{
+    padding: 0px 12px;
+  }
+}
+
+.footer_contact{
+  padding: 40px 20px;
+  @include mediaSP{
+    padding: 40px 0px;
+  }
+  ul{
+    max-width: 1320px;
+    margin: 0 auto;
+
+    @include mediaPC{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  li{
+    font-weight: bold;
+    border-radius: 10px;
+    margin: 10px 0;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    @include mediaPC{
+      width: 32%;
+      margin: 30px 0;
+
+    }
+    a{
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      @include mediaSP{
+        height: 60px;
+      }
+    }
+    &::before,&::after{
+      content:"";
+      width:100%;
+      height:100%;
+      position:absolute;
+      left:0;
+      top: 0;
+      @include trans;
+    }
+    &::before{
+      z-index:-1;
+      background:linear-gradient(to left,#fff, #D5D5D5);
+    }
+    &::after{
+      z-index:-2;
+      background:linear-gradient(to right,#fff, #D5D5D5);
+    }
+    &:hover{
+      &::before{
+        opacity:0;
+      }
+    }
+  }
+}
+
+.footer_contact_tit{
+  position: relative;
+  max-width: 1320px;
+  margin: 0 auto;
+  text-align: left;
+  color: #fff;
+  padding: 0 0 32px 0;
+  @include mediaSP{
+    text-align: center;
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    background-image: url(../images/footer/foot_line_pc.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 26px;
+    @include mediaSP{
+      background-image: url(../images/footer/foot_line_sp.png);
+      background-size: contain;
+    }
+  }
+}
+/*----------------------------------------------------
+メニューエリア全体
+----------------------------------------------------*/
+.footer_nav_wrap {
+  background: #E0E2EE;
+}
+
+
+
+.footer_nav {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 20px 0;
+  @include mediaSP{
+    padding: 40px 0;
+  }
+}
+
+/*-----------バナーエリア-------------*/
+
+.footer_bnr{
+  ul{
+    display: flex;
+    max-width: 680px;
+    margin: 0 auto;
+    justify-content: space-between;
+    @include mediaSP{
+      width: 85%;
+      justify-content: center;
+
+    }
+  }
+  li{
+    img{
+      height: 62px;
+      width: auto;
+      @include trans;
+      &:hover{
+        opacity: 0.8;
+      }
+      @include mediaSP{
+        height: 36px;
+      }
+    }
+    &:first-child{
+      @include mediaSP{
+        display: none;
+      }
+    }
+    &:last-child{
+      @include mediaSP{
+       margin: 0 0 0 10px;
+      }
+    }
+  }
+}
+
+/*-----------ナビエリア-------------*/
+
+
+.footer_nav_list {
+  &.pc{
+    @include mediaSP{
+      display: none;
+    }
+    display: flex;
+    justify-content: space-between;
+    border-top: #fff 2px groove;
+    margin: 20px 0;
+    padding: 20px 0;
+    dl{
+      width: 25%;
+      padding: 0 30px;
+      text-align: left;
+      border-right: 1px dotted #929292;
+      &:first-child{
+        border-left: 1px dotted #929292;
+      }
+    }
+    dt{
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0 0 10px;
+    }
+    li{
+      font-size: 11px;
+      margin: 0 0 5px 0;
+      padding: 0 0 0 15px;
+
+      a{
+        position: relative;
+        &::before{
+          content: "";
+          position: absolute;
+          border-top: 3px solid transparent;
+          border-bottom: 3px solid transparent;
+          border-left: 5px solid #1D2742;
+          left: -15px;
+          top: 2px;
+          @include trans;
+        }
+        &::after{
+          content: "";
+          position: absolute;
+          background: #000;
+          width: 100%;
+          height: 1px;
+          bottom: -3px;
+          left: 0;
+          @include trans;
+
+        }
+        &:hover{
+          &::before{
+            left: -10px;
+          }
+          &::after{
+            width: 0%;
+          }
+        }
+      }
+    }
+  }
+  &.sp{
+    @include mediaPC{
+      display: none;
+    }
+    ul.foot_main{
+      display: flex;
+      font-size: 13px;
+      margin: 40px auto 20px;
+      width: 90%;
+      justify-content: center;
+      li{
+        padding: 0 5px;
+        border-right: #fff 2px groove;
+        letter-spacing: 0;
+        &:last-child{
+          border-right:none;
+        }
+      }
+    }
+    dl{
+      font-size: 11px;
+    }
+    dt
+    dd{
+      li{
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+/*----------------------------------------------------
+コピーライト
+----------------------------------------------------*/
+
+.copy {
+  background: #fff;
+  padding: 30px;
+  font-size: 11px;
+  letter-spacing: 0;
+}

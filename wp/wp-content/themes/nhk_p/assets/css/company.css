@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+br.sp {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  br.sp {
+    display: none;
+  }
+}
+br.pc {
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  br.pc {
+    display: none;
+  }
+}
+
+.company_image {
+  max-width: 1320px;
+  margin: 100px auto;
+}
+.company_image a {
+  display: block;
+}
+.company_image a img {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.company_image a:hover img {
+  opacity: 0.7;
+}
+
+body.company ul.tab .event.active a::before {
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+body.company ul.tab .company a::before {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+body.company .tab_area#tab1 {
+  display: none;
+}
+body.company .tab_area#tab2 {
+  display: block;
+}

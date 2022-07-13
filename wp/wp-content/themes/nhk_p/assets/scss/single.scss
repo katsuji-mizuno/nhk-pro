@@ -1,0 +1,683 @@
+@charset 'utf-8';
+@import 'mixin';
+
+/*----------------------------------------------------
+記事詳細
+----------------------------------------------------*/
+
+.post_thum {
+  margin: 20px auto;
+  max-width: 800px;
+  @include mediaSP{
+    margin: 0px auto;
+  }
+}
+
+.post_single {
+  max-width: 1320px;
+  margin: 0 auto 0;
+  padding: 0 20px;
+  @include mediaSP{
+    padding: 0 12px;
+  }
+  .post_tit {
+    font-weight: bold;
+    text-align: left;
+    margin: 60px 0 0;
+    border-bottom: 5px solid #000;
+    padding: 0 0 10px;
+    @include mediaSP{
+      margin: 30px 0 0;
+      border-bottom: 2px solid #000;
+      padding: 0 0 10px;
+    }
+  }
+}
+
+/*----------------------------------------------------
+記事 投稿内容
+----------------------------------------------------*/
+
+h2 {
+  text-align: left;
+  margin: 100px 0 60px;
+  border-bottom: 1px solid #000;
+  span{
+    width: fit-content;
+    position: relative;
+    &::after{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 10px;
+      background: #000;
+      left: 0;
+      bottom: -13px;
+    }
+  }
+  @include mediaSP{
+    margin: 60px 0 20px;
+    font-size: 18px;
+    text-align: center;
+  }
+  &.footer_contact_tit{
+    border-bottom: none;
+  }
+}
+
+#post_content {
+
+  h3 {
+    margin: 40px 0 25px;
+    text-align: left;
+    position: relative;
+    @include mediaPC {
+      margin: 40px 0 30px;
+    }
+    &::after{
+      position: absolute;
+      content: "";
+      background: #FFE3B2;
+      width: 100%;
+      height: 20px;
+      left: 0;
+      z-index: -1;
+      top: 10px;
+    }
+  }
+  h4{
+    font-size: 26px;
+    text-align: left;
+    padding: 0 0 10px;
+    border-bottom: 1px solid #000;
+  }
+
+  h6 {
+    color: #fff;
+    background:#FF0000 ;
+    font-size: 16px;
+    padding: 5px 10px;
+    text-align: left;
+    width: fit-content;
+}
+
+  p {
+    text-align: left;
+    margin:20px 0 ;
+    @include mediaSP{
+      margin: 5px 0;
+    }
+    &.has-text-align-center {
+      text-align: center;
+    }
+  }
+
+}
+
+
+/*----------------------------------------------------
+ボタン
+----------------------------------------------------*/
+
+.wp-block-button a {
+  border-radius: unset;
+  padding: 5px 80px 5px 20px;
+  border: 1px solid #000;
+  position: relative;
+  margin: 10px 0 60px;
+  @include trans;
+  @include mediaSP{
+    margin: 10px 0 0px;
+  }
+  &:hover{
+    color: #000;
+    background: #fff;
+  }
+  &::before,
+  &::after{
+    position: absolute;
+    content: "";
+    @include trans;
+  }
+  &::before{
+    right: 30px;
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    top: 50%;
+    margin-top: -1px;
+    @include mediaSP{
+      right: 36px;
+      width: 20px;
+      height: 1px;
+      top: 49%;
+    }
+  }
+  &::after{
+    right: 26px;
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 12px;
+    @include mediaSP{
+      right: 32px;
+      width: 10px;
+      height: 10px;
+      border-top: 1px solid #fff;
+      border-right: 1px solid #fff;
+      top: 12px;
+    }
+  }
+  &:hover{
+    background: #fff;
+    color: #000;
+    &::before{
+      right: 36px;
+      background: #000;
+    }
+    &::after{
+      right: 32px;
+      border-top: 2px solid #000;
+      border-right: 2px solid #000;
+    }
+  }
+}
+
+
+.result_link_wrap{
+  max-width: 1320px;
+  margin: 120px auto 60px;
+  padding: 0 20px;
+  @include mediaSP{
+    margin: 60px auto ;
+  }
+}
+.result_link {
+  text-align: center;
+  width: fit-content;
+  @include mediaSP{
+    margin: 0 auto;
+  }
+  a{
+    background-color: #32373c;
+    display: block;
+    padding: 5px 60px 5px 30px;
+    color: #fff;
+    border: solid 1px #32373c;
+    position: relative;
+    &::after{
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 12px solid #fff;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      top: 11px;
+      right: 20px;
+      @include trans;
+    }
+    @include trans;
+    &:hover{
+      color: #32373c;
+      background-color: #fff;
+      &::after{
+        border-left: 12px solid #32373c;
+        right: 25px;
+      }
+    }
+  }
+}
+
+
+
+/*====================================================================
+カテゴリーごとの表示
+====================================================================*/
+.category_wrap{
+  text-align: left;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+  @include mediaSP{
+    padding: 0 12px;
+  }
+  ul{
+    @include mediaPC{
+      display: flex;
+    }
+  }
+  li{
+    @include mediaPC{
+      width: 23%;
+      margin: 0 40px 0 0;
+    }
+
+    &:last-child{
+      margin: 0;
+    }
+    a{
+      color: #000;
+      .post_thum {
+        overflow: hidden;
+        img{
+          @include trans;
+        }
+      }
+      &:hover{
+        color: #00196b;
+        .post_thum {
+          img{
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+    &.post_wrap{
+      @include mediaSP{
+        border-bottom: 1px solid #000000;
+        padding: 30px 0;
+        margin: 0px 0 0px;
+      }
+    }
+  }
+  h3{
+    margin: 0 0 0px;
+    height: 40px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    @include mediaSP{
+      font-size: 16px;
+      height: auto;
+      margin: 0 0 10px;
+    }
+  }
+  @include mediaSP{
+    .post_set{
+      display: flex;
+      justify-content: space-between;
+    }
+    .post_thum{
+      width: 45%;
+    }
+    .field{
+      width: 50%;
+    }
+
+  }
+}
+
+.list_link{
+  a{
+    font-weight: bold;
+    position: relative;
+    padding: 20px 40px;
+    &::after{
+      content: "";
+      position: absolute;
+      background-image: url(../images/top/arrow_bk.png);
+      background-size: contain;
+      width: 30px;
+      height: 30px;
+      right: 0;
+      @include trans;
+    }
+  }
+  &.pc{
+    @include mediaSP{
+      display: none;
+    }
+    a{
+      &:hover{
+        &::after{
+          right: 10px;
+        }
+      }
+    }
+  }
+  &.sp{
+    font-size: 16px;
+    text-align: right;
+    margin: 30px 0 0;
+    @include mediaPC{
+      display: none;
+    }
+    a{
+      padding: 20px 40px;
+      &::after{
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+}
+
+
+/*====================================================================
+会期や場所のレイアウト
+====================================================================*/
+.field{
+  font-size: 14px;
+  ul{
+    display: block;
+    @include mediaPC{
+      margin: 12px 0 0;
+    }
+  }
+  li{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 0 10px 0;
+  }
+  div{
+    background: #000;
+    color: #fff;
+    width: 20%;
+    text-align: center;
+    height: fit-content;
+  }
+  p{
+    width: 77%;
+    font-weight: bold;
+    @include mediaSP{
+      font-size: 13px;
+    }
+  }
+}
+
+
+/*====================================================================
+各イベントの一覧を見る
+====================================================================*/
+.cate_link {
+  padding: 0 20px;
+  @include mediaSMLmax{
+    padding: 0 12px;
+  }
+  dl{
+    border: 1px solid #000;
+    max-width: 1320px;
+    margin: 60px auto;
+    @include mediaSMLmax{
+      margin: 60px auto;
+    }
+  }
+  dt{
+    border-bottom: 3px solid #000;
+    font-weight: bold;
+    width: fit-content;
+    margin: 10px auto;
+    padding: 10px 20px;
+  }
+  ul{
+    display: flex;
+    margin: 60px 0 40px;
+    flex-wrap: wrap;
+    @include mediaSMLmax{
+      margin: 20px 0;
+      padding: 0 20px;
+    }
+  }
+  li{
+    width: 25%;
+    @include mediaSMLmax{
+      width: 42%;
+      text-align: left;
+      padding: 0 0 0 25px;
+      margin: 5px 0;
+    }
+    @include mediaSP{
+      width: 100%;
+    }
+
+    a{
+      position: relative;
+      &::before{
+        content: "";
+        position: absolute;
+        background-image: url(../images/info/arrow_circle_bk.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 28px;
+        height: 28px;
+        left: -50px;
+        @include trans;
+        @include mediaSMLmax{
+          width: 20px;
+          height: 20px;
+          left: -26px;
+          top: -2px;
+        }
+      }
+      &:hover{
+        &::before{
+          left: -40px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+/*====================================================================
+カラム
+====================================================================*/
+
+.wp-block-columns{
+  border-bottom: 1px solid #707070;
+  margin:0;
+  .wp-block-column{
+    &:first-child{
+      width: 15%;
+      flex-basis: unset;
+      flex-grow: unset;
+    }
+    &:last-child{
+      width: 70%;
+      flex-basis: unset;
+      flex-grow: unset;
+    }
+  }
+  &.equally {
+    justify-content: left;
+    border-bottom: none;
+    justify-content: space-between;
+    .wp-block-column{
+      width: 50%;
+      .wp-block-columns{
+        border-bottom: none;
+        justify-content: space-between;
+        .wp-block-column{
+          width: 50%;
+        }
+      }
+    }
+  }
+  &.profile {
+    border-bottom: none;
+    margin: 60px 0;
+    justify-content: space-between;
+    .wp-block-column {
+      &:last-child{
+        width: 80%;
+      }
+    }
+  }
+  @include mediaSP{
+    padding: 10px 0;
+  }
+}
+
+
+/*======カラム内のテーブル=======*/
+  .wp-block-table{
+    margin: 30px 0;
+    table{
+      border: 1px solid #000;
+      thead{
+        border-bottom: 1px solid #000;
+      }
+      th{
+        background: #EBEBEB;
+        border-right: 1px solid #000;
+        &:last-child{
+          border-right: none;
+        }
+      }
+      tbody{
+        td{
+          border-right: 1px solid #000;
+          border-bottom: 1px dotted #000;
+          &:last-child{
+            border-right: none;
+          }
+        }
+        tr{
+          &:last-child{
+            td{
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+/*====================================================================
+続きを読む
+====================================================================*/
+
+.wp-block-coblocks-accordion-item__content {
+  border-radius: 0;
+  padding: 0px 0px 10px;
+  border: none;
+}
+
+summary.wp-block-coblocks-accordion-item__title{
+  &::after{
+    display: none;
+  }
+}
+
+.wp-block-coblocks-accordion-item summary {
+  text-align: right;
+  cursor:pointer
+}
+
+.wp-block-coblocks-accordion-item details[open] summary {
+ // display: none;
+}
+
+summary.wp-block-coblocks-accordion-item__title {
+  width: fit-content;
+  margin: 0 0 0 auto;
+}
+
+summary.wp-block-coblocks-accordion-item__title {
+  &::marker{
+    display: none;
+  }
+}
+
+
+/*====================================================================
+画像付きカラム（再利用ブロック）
+====================================================================*/
+
+#post_content {
+  .wp-block-columns{
+    &.img_column {
+      display: flex;
+      border-bottom: none;
+
+      .wp-block-column{
+        &:first-child{
+          width: 30% ;
+        }
+        &:last-child{
+          width: 70% ;
+        }
+      }
+    }
+  }
+
+  .column_r{
+    .wp-block-columns{
+      align-items:center ;
+      display: flex;
+      flex-wrap: unset;
+      justify-content: space-between;
+      border-bottom: none;
+
+      .wp-block-column{
+        &:first-child{
+          width: 100px ;
+          @include mediaSP{
+            display: contents;
+          }
+        }
+        &:last-child{
+          width: calc(100% - 120px) ;
+        }
+      }
+      h5{
+        text-align: left;
+        font-size: 24px;
+        margin: 0 0 5px 0;
+        @include mediaSP{
+          font-size: 16px;
+        }
+      }
+      p{
+        margin: 0;
+      }
+    }
+    ul{
+      text-align: left;
+      @include mediaPC{
+        padding: 30px;
+      }
+      li{
+        margin: 10px 0;
+      }
+    }
+
+    .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:first-child) {
+      @include mediaSP{
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .icon_column{
+    margin: 0;
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+    width: 100px;
+    height: 100px;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    line-height: 1.2;
+    border-bottom: none;
+    @include mediaSP{
+      width: 70px;
+      height: 60px;
+      font-size: 16px;
+    }
+  }
+}

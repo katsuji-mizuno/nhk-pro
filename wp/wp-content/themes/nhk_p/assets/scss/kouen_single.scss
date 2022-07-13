@@ -1,0 +1,152 @@
+@charset 'utf-8';
+@import 'mixin';
+
+#main{
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/*----------------------------------------------------
+記事リスト
+----------------------------------------------------*/
+h1{
+  @include mediaSP{
+    border-bottom:1px solid #000 ;
+  }
+  span{
+    font-size: 20px;
+    @include mediaSP{
+      font-size: 14px;
+    }
+  }
+}
+.post_single {
+  padding: 0px;
+}
+
+.post_single .post_tit {
+  align-items: center;
+  @include mediaSP{
+    font-size: 22px;
+  }
+}
+
+section.post_wrap {
+  padding: 0;
+}
+.outline_wrap{
+  display: flex;
+
+  &.pc{
+    margin: 40px 0;
+    @include mediaSP{
+      display: none;
+    }
+  }
+  &.sp{
+    margin: 20px 0;
+    @include mediaPC{
+      display: none;
+    }
+  }
+}
+.outline{
+  text-align: left;
+  margin: 0 0 0 20px;
+  width: calc(100% - 140px);
+}
+
+.outline_text {
+  text-align: left;
+  &.sp{
+    @include mediaPC{
+      display: none;
+    }
+  }
+}
+
+.post_tags{
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.job{
+  border-left: #19A7B3 3px solid;
+  padding: 0 0 0 10px;
+  font-size: 20px;
+}
+
+.outline_tit{
+  background: #000;
+  color: #fff;
+  width: fit-content;
+  padding: 2px 10px;
+  margin: 20px 0 10px;
+}
+
+.outline_info{
+  margin: 0px 0px 20px;
+}
+
+
+.post_tags{
+  a{
+    width: fit-content;
+    border: 1px solid #000;
+    padding: 2px 10px;
+    background: #fff;
+    margin: 10px 10px 0 0;
+    white-space: nowrap;
+    display: block;
+    @include trans;
+    &:hover{
+      color: #fff;
+      background: #19A7B3;
+    }
+    @include mediaSP{
+      display: block;
+      margin: 0 10px 5px 0;
+    }
+  }
+  @include mediaSP{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+}
+
+#post_content{
+  li{
+    text-align: left;
+  }
+  h2{
+    text-align: left;
+    margin: 40px 0;
+  }
+}
+
+.kouen_thum{
+  width: 120px;
+}
+
+
+
+.wp-block-table table {
+  border: none;
+}
+
+.wp-block-table table tbody td {
+  border-right: none;
+  border-bottom: none;
+  text-align: left;
+  padding: 10px 10px 10px 0;
+  vertical-align: top;
+  &:last-child{
+    width: 100%;
+  }
+}
+.wp-block-columns .wp-block-column:first-child {
+  width:fit-content;
+
+}

@@ -1,0 +1,198 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+br.sp {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  br.sp {
+    display: none;
+  }
+}
+br.pc {
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  br.pc {
+    display: none;
+  }
+}
+
+/*====================================================================
+お問い合わせフォーム 確認ページ
+====================================================================*/
+.clear_btn {
+  display: none;
+}
+
+.contact_txt {
+  margin: 30px 0 80px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .contact_txt {
+    margin: 20px 0 40px;
+  }
+}
+
+.form_wrap {
+  margin: 30px auto;
+}
+
+.form_tit {
+  padding: 0;
+}
+.form_tit span {
+  display: none;
+}
+
+.form_inner_tit {
+  display: none;
+}
+
+.form_mail {
+  padding: 0;
+  border-left: none;
+}
+.form_mail.check {
+  display: none;
+}
+
+.form_input_inner .form_input {
+  margin: 0 0 20px;
+}
+.form_input_inner .form_input::after {
+  display: none;
+}
+
+.form_note {
+  margin: 100px 0 40px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .form_note {
+    margin: 40px 0 40px;
+  }
+}
+
+.back_btn {
+  margin: 60px auto 30px;
+  max-width: 600px;
+  position: relative;
+}
+.back_btn input {
+  border: 1px solid #000;
+  padding: 20px;
+  background: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.back_btn:hover input {
+  background: #000;
+  color: #fff;
+}
+.back_btn::before, .back_btn::after {
+  content: "";
+  position: absolute;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.back_btn::before {
+  left: 30px;
+  width: 30px;
+  height: 2px;
+  background: #32373c;
+  top: 50%;
+  margin-top: -1px;
+  /* 1000以下  */
+}
+@media all and (max-width: 1000px) {
+  .back_btn::before {
+    right: 26px;
+    width: 20px;
+    height: 1px;
+    top: 49%;
+  }
+}
+.back_btn::after {
+  left: 26px;
+  width: 14px;
+  height: 14px;
+  border-top: 2px solid #32373c;
+  border-right: 2px solid #32373c;
+  -webkit-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+  top: 26px;
+  /* 1000以下  */
+}
+@media all and (max-width: 1000px) {
+  .back_btn::after {
+    right: 20px;
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid #32373c;
+    border-right: 1px solid #32373c;
+    top: 25px;
+  }
+}
+.back_btn:hover {
+  color: #fff;
+  background-color: #000;
+}
+.back_btn:hover::before {
+  left: 35px;
+  background: #fff;
+}
+.back_btn:hover::after {
+  left: 31px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  /* 1000以下  */
+}
+@media all and (max-width: 1000px) {
+  .back_btn:hover::after {
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+  }
+}
+
+.form_input_year_wrap .form_inner_tit {
+  padding: 0;
+}
+
+.form_input_year {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.form_input_year span {
+  padding: 0;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.form_input_year p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.form_check p {
+  display: none;
+}
+
+.form_hidden {
+  display: block;
+}
+
+.form_zuroku {
+  margin: 0 0 20px;
+}

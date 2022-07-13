@@ -1,0 +1,589 @@
+@charset 'utf-8';
+@import 'mixin';
+
+/*----------------------------------------------------
+記事リスト
+----------------------------------------------------*/
+h1{
+  @include mediaSP{
+    border-bottom:1px solid #000 ;
+  }
+}
+
+.catalog_inner{
+  max-width: 1320px;
+  margin: 0 auto;
+  dt{
+    span{
+      color: #FF0000;
+    }
+  }
+}
+
+.catalog_inner_links{
+  a{
+    background: #000;
+    color: #fff;
+    display: block;
+    padding: 20px 60px 20px 20px;
+    position: relative;
+    font-size: 21px;
+    font-weight: bold;
+    border: 1px solid #000;
+    width: fit-content;
+    margin: 0 auto;
+    @include mediaSMLmax{
+      font-size: 15px;
+      padding: 10px 35px 10px 10px;
+    }
+    @include trans;
+    &::before,
+    &::after{
+      position: absolute;
+      content: "";
+      @include trans;
+    }
+    &::before{
+      right: 28px;
+      width: 30px;
+      height: 2px;
+      background: #fff;
+      top: 50%;
+      margin-top: -1px;
+      @include mediaSMLmax{
+        right: 16px;
+        width: 14px;
+        height: 1px;
+        top: 49%;
+      }
+    }
+    &::after{
+      right: 22px;
+      width: 18px;
+      height: 18px;
+      border-top: 2px solid #fff;
+      border-right: 2px solid #fff;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      top: 26px;
+      @include mediaSMLmax{
+        right: 12px;
+        width: 10px;
+        height: 10px;
+        border-top: 1px solid #fff;
+        border-right: 1px solid #fff;
+        top: 15px;
+      }
+    }
+    &:hover{
+      background: #fff;
+      color: #000;
+      &::before{
+        right: 32px;
+        background: #000;
+      }
+      &::after{
+        right: 26px;
+        border-top: 2px solid #000;
+        border-right: 2px solid #000;
+        @include mediaSMLmax{
+          border-top: 1px solid #000;
+          border-right: 1px solid #000;
+        }
+      }
+    }
+  }
+}
+
+.footer_link{
+  max-width: 1320px;
+  margin: 0 auto;
+
+  padding: 60px 0;
+  @include mediaPC{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+/*----------------------------------------------------
+Commonの打ち消し
+----------------------------------------------------*/
+
+.catalog_inner {
+  margin: 60px auto 0px;
+  @include mediaSMLmax{
+    margin: 20px 0 0 ;
+  }
+}
+
+.catalog_inner_links dt {
+  margin: 0px 0 60px;
+  @include mediaSMLmax{
+    margin: 20px 0;
+    text-align: left;
+    letter-spacing: 0;
+  }
+}
+
+
+
+
+/*----------------------------------------------------
+年代一覧
+----------------------------------------------------*/
+
+.catalog_age {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  max-width: 1320px;
+  margin: 100px auto 40px;
+  @include mediaSP{
+    margin: 60px auto 0px;
+  }
+  dl{
+    padding: 20px 0;
+    @include mediaPC{
+      display: flex;
+      padding: 20px ;
+
+    }
+  }
+  dt{
+    margin: 10px 20px 0 0;
+    width: 18%;
+    @include mediaSP{
+      margin:0 0 20px 0 ;
+    }
+  }
+  ul{
+    display: flex;
+  }
+  li{
+    margin: 10px 20px 10px 0;
+    @include mediaSP{
+      font-size: 14px;
+      margin: 10px 18px 10px 0;
+    }
+  }
+}
+
+
+/*----------------------------------------------------
+コンテンツ部分
+----------------------------------------------------*/
+
+
+.category_wrap{
+
+    li{
+      text-align: left;
+      font-weight: bold;
+      font-size: 22px;
+      max-width: 1320px;
+      margin:  0 auto 20px ;
+      border-bottom: 1px solid #000;
+      @include mediaSP{
+        margin: 20px auto;
+        font-size: 16px;
+      }
+      span{
+        width: fit-content;
+        position: relative;
+        &::after{
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 10px;
+          background: #000;
+          left: 0;
+          bottom: -16px;
+          @include mediaSP{
+            bottom: -15px;
+          }
+        }
+      }
+    }
+    table {
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      border-spacing: 0px;
+    }
+    th{
+      background: #F1F1F1;
+      &.table_tit{
+        width: 60%;
+      }
+      &.table_price{
+        width: 40%;
+      }
+    }
+    th,td{
+      border-top: 1px solid #000;
+      border-left: 1px solid #000;
+      padding: 15px;
+      &:last-child{
+        border-right: 1px solid #000;
+      }
+      &.td_tit{
+        text-align: left;
+        color: #000;
+        &.stock_few{
+          color: #FF0000;
+          span{
+            color: #000;
+          }
+        }
+        h3{
+          span{
+            font-weight: normal;
+          }
+          margin: 0 0 10px;
+          &.stock_few{
+            color: #FF0000;
+            span{
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+    tr{
+      &:last-child{
+        td{
+          border-bottom: 1px solid #000;
+        }
+      }
+      color: #000;
+      &.sold{
+        td{
+          span{
+          color: #FF0000;
+          text-decoration : line-through ;
+          }
+          &.td_tit {
+            &::after{
+              z-index: 1;
+              content: "※完売しました";
+              background: #FF0000;
+              color: #fff;
+              font-size: 14px;
+              padding: 5px;
+              margin: 0 0 0 20px;
+            }
+          }
+        }
+      }
+    }
+    p{
+      &.catalog_price{
+        color: #000;
+      }
+    }
+
+}
+
+.catalog_link {
+  text-align: left;
+  color: #000;
+
+  a{
+    position: relative;
+    font-weight: bold;
+    margin: 20px 0 0;
+    display: block;
+    width: fit-content;
+    &::after{
+      content: "";
+      position: absolute;
+      background: #000;
+      width: 100%;
+      height: 1px;
+      bottom: -3px;
+      left: 0;
+      @include trans;
+    }
+    &:hover{
+      &::after{
+        width: 0%;
+      }
+    }
+  }
+}
+
+
+/*----------------------------------------------------
+カテゴリー切り替えのタブ
+----------------------------------------------------*/
+
+/*---------リンク部分-----------*/
+ul.tab_catalog{
+  display: flex;
+  flex-wrap: wrap;
+
+  li{
+    a{
+      padding: 10px 10px 10px 40px;
+      position: relative;
+      @include mediaSP{
+        padding: 5px 5px 5px 20px;
+      }
+      @include trans;
+      &::before{
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 15px solid #000;
+        top: 12px;
+        left: 10px;
+        @include mediaSP{
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 8px solid #000;
+          top: 9px;
+          left: 6px;
+        }
+      }
+      @include mediaPC{
+      &:hover{
+          color: #fff;
+          background: #000;
+          &::before{
+            border-top: 15px solid #fff;
+          }
+        }
+      }
+    }
+    &.active{
+      a{
+        color: #fff;
+        background: #000;
+        &::before{
+          border-top: 15px solid #fff;
+          @include mediaSP{
+            border-top: 8px solid #fff;
+          }
+        }
+        @include mediaPC{
+        &:hover{
+          color: #000;
+          background: #fff;
+          &::before{
+            border-top: 15px solid #000;
+          }
+        }
+      }
+      }
+    }
+  }
+}
+
+
+
+/*---------タブの中身-----------*/
+.tab_content{ /*内容*/
+  clear: both;
+  overflow: hidden;
+}
+.category_wrap {
+  margin: 80px 0 0px;
+}
+.catalog_area {
+
+  ul{
+    max-width: 1320px;
+    margin: 0px auto 0;
+    padding: 0px 0 20px;
+  }
+}
+
+
+
+
+
+
+/*----------------------------------------------------
+テーブル
+----------------------------------------------------*/
+
+.table_wrap{
+  overflow: scroll;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar{
+    display: none;
+  }
+  table{
+    width: 100%;
+    min-width: 800px;
+    border-collapse: collapse;
+  }
+}
+
+/*----------------------------------------------------
+発送・お支払い方法
+----------------------------------------------------*/
+
+
+.payment{
+  max-width: 1320px;
+  margin: 0 auto;
+  text-align: left;
+
+  h2{
+    text-align: left;
+    font-weight: bold;
+    max-width: 1320px;
+    margin: 40px auto;
+    border-bottom: 1px solid #000;
+    padding: 10px 0;
+    @include mediaSP{
+      font-size: 15px;
+    }
+    span{
+      width: fit-content;
+      position: relative;
+      &::after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 10px;
+        background: #000;
+        left: 0;
+        bottom: -23px;
+      }
+    }
+  }
+}
+
+
+.payment_text {
+  margin: 30px 0;
+}
+
+ol.howto_order{
+  margin: 0px 0 30px;
+  >li{
+    margin: 10px 0;
+    list-style: none;
+    padding-left: 20px;
+    text-indent: -20px;
+  }
+}
+
+
+.payment_icon {
+  ul{
+    @include mediaSMLmin{
+      display: flex;
+    }
+  }
+  li{
+    display: flex;
+    align-items: center;
+    @include mediaSMLmax{
+      margin: 10px 0;
+    }
+  }
+  img{
+    width: 172px;
+    @include mediaSMLmax{
+      width: 86px;
+    }
+  }
+  div{
+    font-weight: bold;
+    margin: 0 80px 0 20px;
+    @include mediaSMLmax{
+      margin: 0 20px;
+    }
+    h3{
+      font-size: 20px;
+      @include mediaSMLmax{
+        font-size: 15px;
+      }
+    }
+    p{
+      font-size: 16px;
+      @include mediaSMLmax{
+        font-size: 10px;
+      }
+    }
+  }
+
+}
+
+
+/*----------------------------------------------------
+送料
+----------------------------------------------------*/
+
+.postage{
+  dl{
+    margin: 10px 0;
+    &:first-child{
+      @include mediaPC{
+        display: flex;
+      }
+      dt{
+        margin: 0 10px 0 0;
+        @include mediaPC{
+          width: 30%;
+        }
+      }
+      dd{
+        margin: 0 0 0 30px;
+        @include mediaPC{
+          width: 70%;
+        }
+      }
+      li{
+        margin: 0 0 10px 0;
+        display: flex;
+        span{
+          display: block;
+          width: 40%;
+        }
+      }
+      p{
+        width: 60%;
+      }
+    }
+    &:last-child{
+      dd{
+        margin: 10px 0 0 0px;
+      }
+    }
+    &:last-child{
+      dd{
+        margin: 0 0 0 20px;
+      }
+    }
+  }
+}
+
+.postage_foot{
+  background: #EFEFEF;
+  margin:80px 0;
+  padding: 30px;
+  @include mediaSP{
+    margin:20px 0 80px;
+  }
+  span{
+    margin: 0 0 30px 0;
+    display: block;
+  }
+  p{
+    font-weight: bold;
+    font-size: 18px;
+    @include mediaSP{
+      font-size: 13px;
+    }
+  }
+}
+

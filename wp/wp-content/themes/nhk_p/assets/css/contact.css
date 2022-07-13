@@ -1,0 +1,617 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+br.sp {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  br.sp {
+    display: none;
+  }
+}
+br.pc {
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  br.pc {
+    display: none;
+  }
+}
+
+/*====================================================================
+お問い合わせメニュー
+====================================================================*/
+.tit_sub {
+  margin: 30px 0;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .tit_sub {
+    margin: 10px 0;
+    font-size: 15px;
+  }
+}
+
+.contact_menu {
+  margin: 40px 0;
+}
+.contact_menu ul {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .contact_menu ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+.contact_menu li {
+  text-align: left;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .contact_menu li {
+    width: 47%;
+  }
+}
+.contact_menu li.event {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .contact_menu li.event {
+    margin: 0 10px 40px 0;
+  }
+}
+.contact_menu li.event a {
+  background: #FF8800;
+  border: 1px solid #FF8800;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .contact_menu li.event a:hover {
+    color: #FF8800;
+  }
+  .contact_menu li.event a:hover::after {
+    border-left: 10px solid #FF8800;
+  }
+}
+.contact_menu li.lecture {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .contact_menu li.lecture {
+    margin: 0 0 40px 10px;
+  }
+}
+.contact_menu li.lecture a {
+  background: #00B590;
+  border: 1px solid #00B590;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .contact_menu li.lecture a:hover {
+    color: #00B590;
+  }
+  .contact_menu li.lecture a:hover::after {
+    border-left: 10px solid #00B590;
+  }
+}
+.contact_menu li.nhkp {
+  margin: 0;
+}
+.contact_menu li.nhkp a {
+  background: #1C3271;
+  border: 1px solid #1C3271;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .contact_menu li.nhkp a:hover {
+    color: #1C3271;
+  }
+  .contact_menu li.nhkp a:hover::after {
+    border-left: 10px solid #1C3271;
+  }
+}
+.contact_menu li a {
+  color: #fff;
+  display: block;
+  border-radius: 10px;
+  padding: 5px 20px 30px;
+  position: relative;
+  font-weight: bold;
+  /* 751以上 */
+  /* 750以下  */
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  /* 751以上 */
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .contact_menu li a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100px;
+    padding: 0 20px;
+  }
+}
+@media all and (max-width: 750px) {
+  .contact_menu li a {
+    text-align: center;
+  }
+}
+@media all and (min-width: 751px) {
+  .contact_menu li a:hover {
+    background: #fff;
+  }
+}
+.contact_menu li a span {
+  font-size: 22px;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .contact_menu li a span {
+    font-size: 46px;
+  }
+}
+.contact_menu li a h2 {
+  font-size: 15px;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .contact_menu li a h2 {
+    text-align: left;
+    font-size: 22px;
+    margin: 0 40px 0 20px;
+  }
+}
+.contact_menu li a::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  /* 751以上 */
+  /* 750以下  */
+}
+@media all and (min-width: 751px) {
+  .contact_menu li a::after {
+    border-left: 10px solid #fff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    right: 30px;
+  }
+}
+@media all and (max-width: 750px) {
+  .contact_menu li a::after {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+    left: 50%;
+    margin-left: -5px;
+    bottom: 12px;
+  }
+}
+@media all and (min-width: 751px) {
+  .contact_menu li a:hover::after {
+    right: 35px;
+  }
+}
+.contact_menu li p {
+  margin: 10px 0;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .contact_menu li p {
+    font-size: 13px;
+    margin: 10px 0 20px;
+  }
+}
+
+/*====================================================================
+お電話もしくはFAXでのお問い合わせはこちらからお願いします。
+====================================================================*/
+.contact_tel {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 10px 0;
+  margin: 10px 0;
+}
+.contact_tel .contact_tel_tit {
+  font-size: 20px;
+  margin: 20px 0;
+  font-weight: bold;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .contact_tel .contact_tel_tit {
+    font-size: 15px;
+  }
+}
+.contact_tel .contact_tel_txt {
+  margin: 20px 0;
+}
+.contact_tel .txt_tel, .contact_tel .txt_fax {
+  max-width: 900px;
+  margin: 10px auto;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .contact_tel .txt_tel, .contact_tel .txt_fax {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+.contact_tel .txt_tel .txt_icon, .contact_tel .txt_fax .txt_icon {
+  background: #000;
+  color: #fff;
+  padding: 2px 10px;
+  font-weight: bold;
+  margin: 0 10px 0 0;
+  font-size: 13px;
+}
+.contact_tel .txt_tel h3, .contact_tel .txt_fax h3 {
+  font-size: 26px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .contact_tel .txt_tel h3, .contact_tel .txt_fax h3 {
+    font-size: 16px;
+  }
+}
+.contact_tel .txt_tel h3 span, .contact_tel .txt_fax h3 span {
+  font-weight: normal;
+  font-size: 20px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .contact_tel .txt_tel h3 span, .contact_tel .txt_fax h3 span {
+    font-size: 14px;
+  }
+}
+.contact_tel .txt_tel p, .contact_tel .txt_fax p {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .contact_tel .txt_tel p, .contact_tel .txt_fax p {
+    padding: 0 0 0 10px;
+    border-left: 1px solid #000;
+  }
+}
+.contact_tel .txt_tel p span, .contact_tel .txt_fax p span {
+  color: #FA071A;
+  margin: 0 10px;
+}
+
+.contact_message {
+  color: #FA071A;
+  max-width: 960px;
+  margin: 10px auto;
+  text-align: left;
+}
+
+/*====================================================================
+イベントご来場のみなさまへ  展示会の図録購入希望の方へ
+====================================================================*/
+.for_wrap {
+  text-align: left;
+  margin: 40px 0;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .for_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 80px 0;
+  }
+}
+.for_wrap .for_evnet, .for_wrap .for_catalog {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .for_wrap .for_evnet, .for_wrap .for_catalog {
+    width: 46%;
+  }
+}
+.for_wrap .for_evnet p, .for_wrap .for_catalog p {
+  margin: 20px 0;
+}
+.for_wrap .for_evnet a, .for_wrap .for_catalog a {
+  font-size: 20px;
+  font-weight: bold;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .for_wrap .for_evnet a, .for_wrap .for_catalog a {
+    font-size: 15px;
+    text-align: left;
+  }
+}
+.for_wrap .for_catalog {
+  margin: 40px 0;
+}
+.for_wrap h3 {
+  border-bottom: 1px solid #000;
+  padding: 0 0 4px;
+}
+.for_wrap h3 span {
+  position: relative;
+}
+.for_wrap h3 span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background: #000;
+  left: 0;
+  bottom: -16px;
+}
+.for_wrap div a {
+  color: #fff;
+  background-color: #32373c;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  display: block;
+  border: 1px solid #32373c;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.for_wrap div a::before, .for_wrap div a::after {
+  content: "";
+  position: absolute;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.for_wrap div a::before {
+  right: 30px;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  top: 50%;
+  margin-top: -1px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .for_wrap div a::before {
+    right: 26px;
+    width: 20px;
+    height: 1px;
+    top: 49%;
+  }
+}
+.for_wrap div a::after {
+  right: 26px;
+  width: 14px;
+  height: 14px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 17px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .for_wrap div a::after {
+    right: 20px;
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    top: 15px;
+  }
+}
+.for_wrap div a:hover {
+  color: #32373c;
+  background-color: #fff;
+}
+.for_wrap div a:hover::before {
+  right: 35px;
+  background: #32373c;
+}
+.for_wrap div a:hover::after {
+  right: 31px;
+  border-top: 2px solid #32373c;
+  border-right: 2px solid #32373c;
+}
+
+/*====================================================================
+NHKの番組に関するお問い合わせ
+====================================================================*/
+.about_program {
+  text-align: left;
+  margin: 50px 0;
+}
+.about_program .for_evnet, .about_program .for_catalog {
+  width: 46%;
+}
+.about_program .for_evnet p, .about_program .for_catalog p {
+  margin: 20px 0;
+}
+.about_program p.about_program_txt {
+  margin: 30px 0;
+}
+.about_program h3 {
+  border-bottom: 1px solid #000;
+  padding: 0 0 4px;
+}
+.about_program h3 span {
+  position: relative;
+}
+.about_program h3 span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background: #000;
+  left: 0;
+  bottom: -16px;
+}
+.about_program p {
+  margin: 10px 0;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .about_program p {
+    margin: 0;
+  }
+}
+
+.program_icon {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .program_icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: self-start;
+        -ms-flex-align: self-start;
+            align-items: self-start;
+  }
+}
+.program_icon h4 {
+  font-size: 22px;
+  width: calc(100% - 170px);
+  margin: 0 0 0 30px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .program_icon h4 {
+    font-size: 17px;
+    width: calc(100% - 85px);
+    margin: 0 0 0 10px;
+  }
+}
+.program_icon h4 span {
+  font-size: 18px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .program_icon h4 span {
+    font-size: 14px;
+    margin: 5px 0;
+    display: block;
+  }
+}
+.program_icon h4 span a {
+  position: relative;
+}
+.program_icon h4 span a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  background: #000;
+  height: 1px;
+  left: 0;
+  bottom: -5px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.program_icon h4 span a:hover::after {
+  width: 100%;
+}
+.program_icon h4 span b {
+  font-size: 14px;
+  background: #000;
+  color: #fff;
+  padding: 5px;
+  margin: 0 10px 0 0;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .program_icon h4 span b {
+    font-size: 12px;
+  }
+}
+
+.program_hp {
+  /* 751以上 */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media all and (min-width: 751px) {
+  .program_hp {
+    width: 49%;
+  }
+}
+.program_hp div {
+  width: 120px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .program_hp div {
+    width: 75px;
+  }
+}
+
+.program_tel_wrap {
+  /* 751以上 */
+  /* 750以下  */
+}
+@media all and (min-width: 751px) {
+  .program_tel_wrap {
+    width: 49%;
+  }
+}
+@media all and (max-width: 750px) {
+  .program_tel_wrap {
+    margin: 10px 0;
+  }
+}
+.program_tel_wrap .program_tel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.program_tel_wrap .program_tel div {
+  width: 120px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .program_tel_wrap .program_tel div {
+    width: 75px;
+  }
+}
+
+.program_tel_message {
+  margin: 20px 0 0;
+}
+/*# sourceMappingURL=contact.css.map */

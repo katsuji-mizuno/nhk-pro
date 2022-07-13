@@ -1,0 +1,353 @@
+@charset 'utf-8';
+@import 'mixin';
+@import 'header';
+@import 'footer';
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-style: normal;
+}
+
+body {
+  /* for iOS */
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  /* for Chrome */
+  -webkit-backface-visibility: hidden;
+}
+
+html :where(img) {
+  max-width: none
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  width:100%;
+  color: #000;
+  font-size: 17px;
+  text-align: center;
+  letter-spacing: 2px;
+  @include mediaSP{
+    font-size: 14px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+section {
+  display: block;
+}
+
+a {
+  color: $text;
+  outline: none;
+  text-decoration: none;
+}
+
+a:link {
+  color: $text;
+  text-decoration: none;
+}
+
+a:visited {
+  color: $text;
+}
+
+a:hover {
+  color: $link;
+}
+
+img {
+  width :100%;
+  height: auto;
+  vertical-align: top;
+}
+
+a img  {
+  border: none;
+}
+
+ul,li {
+  list-style: none;
+}
+
+input,label,select,textarea {
+  vertical-align: middle;
+}
+
+
+@include mediaSP {
+  html {
+    overflow-y: scroll;
+}
+  html,
+  body {
+    height: auto;
+  }
+}
+@include mediaPC {
+  html,
+  body {
+    height: 100%;
+    min-height:100%;
+    height:auto !important;
+  }
+}
+
+
+
+h1{
+  font-size: 30px;
+  @include mediaSP{
+    font-size: 26px;
+  }
+}
+
+
+
+h2{
+  font-size: 22px;
+  @include mediaSP{
+    font-size: 20px;
+  }
+}
+
+h3{
+  font-size: 17px;
+  @include mediaSP{
+    font-size: 16px;
+  }
+}
+
+/*====================================================================
+カテゴリー下のライン
+====================================================================*/
+
+.category_tit {
+  position: relative;
+  padding: 20px 0 35px;
+  margin: 0;
+  @include mediaPC{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 0 32px;
+    margin: 0 0 30px;
+  }
+
+  &::after{
+    content: "";
+    position: absolute;
+    background-image: url(../images/top/tit_line_bk_pc.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 27px;
+    left: 0;
+    bottom: 0;
+    background-size: contain;
+    @include mediaSP{
+      background-image: url(../images/top/tit_line_bk_sp.png);
+    }
+  }
+  &#exhibition{
+    color: #FF8800;
+    &::after{
+      background-image: url(../images/top/tit_line_01_pc.png);
+      @include mediaSP{
+        background-image: url(../images/top/tit_line_01_sp.png);
+      }
+    }
+  }
+  &#stage{
+    color: #1C3271;
+    &::after{
+      background-image: url(../images/top/tit_line_02_pc.png);
+      @include mediaSP{
+        background-image: url(../images/top/tit_line_02_sp.png);
+      }
+    }
+  }
+  &#family{
+    color: #FF584B;
+    &::after{
+      background-image: url(../images/top/tit_line_03_pc.png);
+      @include mediaSP{
+        background-image: url(../images/top/tit_line_03_sp.png);
+      }
+    }
+  }
+  &#event{
+    color: #A460C1;
+    &::after{
+      background-image: url(../images/top/tit_line_04_pc.png);
+      @include mediaSP{
+        background-image: url(../images/top/tit_line_04_sp.png);
+      }
+    }
+  }
+}
+
+
+/*====================================================================
+展覧会図録
+====================================================================*/
+.catalog_wrap{
+  background: #F5F5F5;
+  padding: 80px 0px;
+  @include mediaSP{
+    padding: 50px 0px;
+  }
+}
+
+
+.catalog{
+  max-width: 1320px;
+  padding: 0 20px;
+  margin: 0 auto;
+  @include mediaSP{
+    padding: 0 12px;
+  }
+  h2{
+    margin: 0;
+    border-bottom: none;
+  }
+  .category_tit {
+    padding: 0 0 32px;
+  }
+}
+
+.catalog_inner{
+  @include mediaPC{
+    display: flex;
+    justify-content: space-between;
+  }
+  @include mediaSP{
+    margin: 20px 0;
+  }
+}
+
+.catalog_inner_images{
+  @include mediaPC{
+    width: 39%;
+  }
+}
+.catalog_inner_links{
+  @include mediaPC{
+    width: 100%;
+  }
+  dt{
+    margin: 0 0 30px;
+    font-weight: bold;
+    @include mediaSP{
+      margin: 40px 0;
+    }
+    span{
+      display: block;
+      margin: 40px 0 0;
+    }
+  }
+  ul{
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid #707070;
+    border-bottom: 1px solid #707070;
+    padding: 30px 0;
+    @include mediaSP{
+      padding: 20px 0;
+    }
+    li{
+      width: 25%;
+
+
+      @include mediaSMLmax{
+        width: 30%;
+      }
+      @include mediaSP{
+        width: 46%;
+      }
+      margin: 10px 0;
+      a{
+        font-size: 17px;
+        position: relative;
+        padding: 0 0 0 30px;
+        @include mediaSP{
+          padding: 0 0 0 20px;
+        }
+        &::before{
+          content: "";
+          position: absolute;
+          border-top: 7px solid transparent;
+          border-bottom: 7px solid transparent;
+          border-left: 12px solid #000;
+          left: 0px;
+          top: 1px;
+
+          @include trans;
+        }
+        &:hover{
+          &::before{
+            left: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*====================================================================
+ヘッダーの「図録」「講師」リンクはSPではトップのみ下に移動
+====================================================================*/
+.catalog_links {
+  &.pc{
+    @include mediaSMLmax{
+      display: none;
+    }
+  }
+  &.sp{
+    display: block;
+    height: 60px;
+    margin: 20px 0;
+    @include mediaSMLmin{
+      display: none;
+    }
+    ul{
+      margin: 10px 0;
+      width: 100%;
+      justify-content: space-between;
+    }
+    li{
+      width: 48%;
+      a{
+        box-shadow: 0px 2px 3px #ccc;
+      }
+    }
+  }
+}
+
+
+/*====================================================================
+br
+====================================================================*/
+
+br{
+  &.PC{
+    @include mediaSP{
+      display: none;
+    }
+  }
+    &.SP{
+      @include mediaPC{
+        display: none;
+      }
+    }
+}

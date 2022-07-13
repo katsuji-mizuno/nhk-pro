@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+br.sp {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  br.sp {
+    display: none;
+  }
+}
+br.pc {
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  br.pc {
+    display: none;
+  }
+}
+
+h1 {
+  max-width: 1320px;
+  margin: 60px auto 0px;
+  padding: 0 0 10px;
+  border-bottom: 4px solid #000;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  h1 {
+    font-size: 20px;
+    margin: 20px auto 0px;
+  }
+}
+
+section.post_wrap {
+  max-width: 1320px;
+  margin: 0px auto 0px;
+  padding: 0 20px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  section.post_wrap {
+    padding: 0 15px;
+  }
+}
+/*# sourceMappingURL=second.css.map */

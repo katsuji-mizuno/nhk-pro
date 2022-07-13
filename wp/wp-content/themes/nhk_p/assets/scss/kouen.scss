@@ -1,0 +1,576 @@
+@charset 'utf-8';
+@import 'mixin';
+
+/*----------------------------------------------------
+講師派遣リスト
+----------------------------------------------------*/
+
+#main{
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 12px;
+
+  @include mediaSP{
+  }
+}
+
+h1{
+  @include mediaSP{
+    border-bottom:1px solid #000 ;
+  }
+  @include mediaPC{
+    display: flex;
+    justify-content: center;
+  }
+  span{
+    margin: 10px 0 0 20px;
+    @include mediaPC{
+      margin: 0 0 0 40px;
+    }
+    @include mediaSP{
+      font-size: 16px;
+    }
+  }
+}
+
+.kouen_note{
+  margin: 60px 0;
+  @include mediaSP{
+    margin: 20px 0;
+  }
+  p{
+    font-weight: bold;
+    margin: 0 0 30px;
+  }
+  span{
+    text-align: left;
+    display: block;
+  }
+
+}
+
+/*----------------------------------------------------
+パンクず
+----------------------------------------------------*/
+
+.breadcrumb{
+  font-size: 14px;
+  margin: 20px 0 0;
+  @include mediaSP{
+    font-size: 12px;
+  }
+  ul{
+    display: flex;
+    padding: 0 0 0 20px;
+    flex-wrap: wrap;
+    @include mediaSP{
+      padding: 0 0 0 15px;
+    }
+  }
+  li{
+    margin: 0 40px 0 0;
+    @include mediaSP{
+      width: fit-content;
+      margin: 0 20px 10px 0;
+      text-align: left;
+    }
+    @include mediaSP{
+      &:nth-child(3){
+        margin: 0 0px 10px 0;
+      }
+    }
+  }
+  a{
+    &::after{
+      content: "";
+      position: absolute;
+      background: #000;
+      width: 100%;
+      height: 1px;
+      bottom: -3px;
+      left: 0;
+      @include trans;
+    }
+    @include mediaPC{
+      &:hover{
+        &::before{
+          left: -10px;
+        }
+        &::after{
+          width: 0%;
+        }
+      }
+    }
+  }
+  a,span{
+    position: relative;
+    &::before{
+      content: "";
+      position: absolute;
+      border-top: 3px solid transparent;
+      border-bottom: 3px solid transparent;
+      border-left: 5px solid #1D2742;
+      left: -15px;
+      top: 5px;
+      @include trans;
+      @include mediaSP{
+        top: 3px;
+        left: -9px;
+      }
+    }
+  }
+}
+
+/*----------------------------------------------------
+コンテンツ部分
+----------------------------------------------------*/
+
+ul.kana_menu{
+  display: flex;
+  justify-content: center;
+}
+
+.tag_menu{
+  a{
+    background: #ccc;
+    padding: 10px;
+    margin: 30px;
+  }
+}
+
+ul.item_list{
+
+  @include mediaSMLmin{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  li{
+    @include mediaSMLmin{
+      width: 33.3%;
+    }
+    a{
+      display: flex;
+      .thumnail{
+        width: 100px;
+        overflow: hidden;
+        height: 100px;
+        img{
+          @include trans;
+        }
+      }
+      &:hover{
+        .thumnail{
+         img{
+          transform: scale(1.1);
+         }
+        }
+      }
+    }
+  }
+  h2{a{
+    font-size: 50px;
+  }}
+}
+
+section.post_wrap {
+  padding: 0;
+}
+
+.item_text{
+  width: calc(100% - 140px);
+  text-align: left;
+  margin: 0 0 0 20px;
+  font-size: 12px;
+}
+
+.job {
+  padding: 0 0 0 5px;
+  border-left: #19A7B3 3px solid;
+  margin: 5px 0 0;
+}
+
+
+.outline_tit{
+  background: #000;
+  color: #fff;
+  width: fit-content;
+  padding: 2px 10px;
+  margin: 10px 0 5px;
+}
+
+.outline_info{
+  margin: 0px 0px 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: "(略)";
+}
+
+.post_tags{
+  a{
+    background: #ccc;
+    padding: 10px;
+    margin: 30px;
+  }
+}
+
+.kana_tit{
+  font-size: 60px;
+  font-weight: bold;
+  text-align: left;
+}
+
+
+/*----------------------------------------------------
+タグのボタン
+----------------------------------------------------*/
+
+.tag_menu{
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 60px auto 0px;
+  @include mediaSP{
+    margin: 20px auto 0px;
+  }
+  li{
+    margin: 5px 0;
+    a{
+      width: fit-content;
+      border: 1px solid #000;
+      padding: 4px 10px;
+      background: #fff;
+      margin: 0 10px 0 0;
+      @include trans;
+      &:hover{
+        color: #fff;
+        background: #19A7B3;
+      }
+    }
+  }
+}
+
+/*----------------------------------------------------
+五十音順のボタン
+----------------------------------------------------*/
+
+.kana_menu {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  margin: 40px auto 100px;
+  @include mediaSP{
+    margin: 20px auto 0px;
+  }
+  ul{
+    display: flex;
+    justify-content: center;
+  }
+  li{
+    display: none;
+    margin: 10px 20px 10px 0;
+    @include mediaSP{
+      font-size: 14px;
+      margin: 10px 18px 10px 0;
+    }
+    a{
+      padding: 10px 10px 10px 40px;
+      position: relative;
+      @include mediaSP{
+        padding: 5px 5px 5px 20px;
+      }
+      @include trans;
+      &::before{
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 15px solid #000;
+        top: 12px;
+        left: 10px;
+        @include mediaSP{
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 8px solid #000;
+          top: 9px;
+          left: 6px;
+        }
+      }
+      @include mediaPC{
+      &:hover{
+          color: #fff;
+          background: #000;
+          &::before{
+            border-top: 15px solid #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/*----------------------------------------------------
+五十音順のタイトル
+----------------------------------------------------*/
+
+.kana_wrap {
+  margin: 40px 0 0px;
+  padding: 0px 0 20px;
+  li{
+    text-align: left;
+    font-weight: bold;
+    font-size: 22px;
+    @include mediaSP{
+      margin: 20px auto;
+      font-size: 16px;
+    }
+    span{
+      width: fit-content;
+      position: relative;
+      &::after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 10px;
+        background: #000;
+        left: 0;
+        bottom: -16px;
+        @include mediaSP{
+          bottom: -15px;
+        }
+      }
+    }
+
+  }
+  &.no_post{
+    display: none;
+  }
+}
+
+.kana_tit{
+  border-bottom: 1px solid #000;
+  margin: 0 0 30px;
+}
+
+.post_tags{
+  a{
+    width: fit-content;
+    border: 1px solid #000;
+    padding: 2px 10px;
+    background: #fff;
+    @include trans;
+    &:hover{
+      color: #fff;
+      background: #19A7B3;
+    }
+  }
+}
+
+
+.kouen_else{
+  background: #EFEFEF;
+  padding: 40px;
+  margin: 80px 0;
+  @include mediaSP{
+    padding: 10px;
+  }
+
+  h3{
+    font-size: 16px;
+  }
+
+  h4{
+    font-size: 14px;
+    margin: 5px 0;
+    font-weight: normal;
+  }
+
+}
+
+.else_list{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  li{
+    width: 16%;
+    @include mediaSP{
+      width: 25%;
+    }
+  }
+  &.no_post{
+    display: none;
+  }
+}
+
+.kana_else_tit{
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  border-bottom: #000 1px solid;
+  margin: 30px 0 0;
+}
+.else_text{
+  text-align: left;
+}
+
+
+
+.kouen_footer{
+  max-width: 1320px;
+  margin: 0 auto;
+  p.kouen_footer_note{
+    background: #EFEFEF;
+    color: #FF0000;
+    margin: 80px 0 40px;
+    padding: 30px;
+    @include mediaSP{
+      margin: 40px 0 20px;
+      padding:10px;
+    }
+  }
+}
+
+.kouen_foot_wrap{
+  padding:0 10px;
+}
+
+.kouen_link{
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 30px 0;
+  @include mediaSP{
+    padding: 0;
+  }
+  a{
+    margin: 0 30px;
+    position: relative;
+    padding: 5px;
+    @include mediaSP{
+      margin: 20px;
+      display: block;
+      padding: 0;
+      text-align: left;
+      width: fit-content;
+      font-size: 12px;
+    }
+    &::before{
+      content: "";
+      position: absolute;
+      border-top: 3px solid transparent;
+      border-bottom: 3px solid transparent;
+      border-left: 5px solid #1D2742;
+      left: -15px;
+      top: 11px;
+      @include trans;
+      @include mediaSP{
+        left: -10px;
+        top: 6px;
+      }
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      background: #000;
+      width: 100%;
+      height: 1px;
+      bottom: -3px;
+      left: 0;
+      @include trans;
+    }
+    &:hover{
+      &::before{
+        left: -10px;
+      }
+      &::after{
+        width: 0%;
+      }
+    }
+  }
+}
+
+.kouen_contact{
+  padding: 20px;
+  border: 1px solid;
+  margin: 60px 0;
+  @include mediaSP{
+    margin: 30px 0;
+    padding: 10px;
+  }
+
+  p{
+    font-weight:bold;
+  }
+}
+
+p.kouen_contact_tit{
+  margin: 0 0 20px;
+  @include mediaSP{
+    margin: 0 0 10px;
+  }
+}
+
+.kouen_contact_info{
+
+  background: #EFEFEF;
+  @include mediaSMLmax{
+    padding: 10px;
+  }
+  @include mediaSMLmin{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .kouen_tel{
+    text-align: left;
+    padding: 20px;
+    @include mediaSMLmax{
+      padding: 10px;
+    }
+    span{
+      margin: 0 0 10px;
+      font-size: 12px;
+      display: block;
+    }
+  }
+  .kouen_form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+    @include mediaSMLmax{
+      margin: 0;
+    }
+    a{
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px 40px 20px 60px;
+      position: relative;
+      @include mediaSMLmax{
+        padding: 5px 5px 5px 40px;
+      }
+      &::before{
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        border-left: 8px solid #1D2742;
+        top: 50%;
+        left: 20px;
+        margin-top: -6px;
+        @include trans;
+      }
+      @include mediaSMLmin{
+        &:hover{
+          &::before{
+            left: 30px;
+          }
+        }
+      }
+    }
+  }
+}

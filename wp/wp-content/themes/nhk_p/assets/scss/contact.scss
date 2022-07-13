@@ -1,0 +1,488 @@
+@charset 'utf-8';
+@import 'mixin';
+
+/*====================================================================
+お問い合わせメニュー
+====================================================================*/
+.tit_sub {
+  margin: 30px 0;
+  @include mediaSP{
+    margin: 10px 0;
+    font-size: 15px;
+  }
+}
+
+.contact_menu {
+  margin: 40px 0;
+  ul{
+    @include mediaPC{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  }
+  li{
+    text-align: left;
+    @include mediaPC{
+      width: 47%;
+    }
+    &.event{
+      @include mediaPC{
+        margin: 0 10px 40px 0;
+      }
+
+      a{
+        background: #FF8800;
+        border: 1px solid #FF8800;
+        @include mediaPC{
+          &:hover{
+            color: #FF8800;
+            &::after{
+              border-left: 10px solid #FF8800;
+            }
+          }
+        }
+      }
+    }
+    &.lecture{
+      @include mediaPC{
+        margin: 0 0 40px 10px;
+      }
+
+      a{
+        background: #00B590;
+        border: 1px solid #00B590;
+        @include mediaPC{
+          &:hover{
+            color: #00B590;
+            &::after{
+              border-left: 10px solid #00B590;
+            }
+          }
+        }
+      }
+    }
+    &.nhkp{
+      margin: 0 ;
+      a{
+        background: #1C3271;
+        border: 1px solid #1C3271;
+        @include mediaPC{
+        &:hover{
+          color: #1C3271;
+          &::after{
+              border-left: 10px solid #1C3271;
+            }
+          }
+        }
+      }
+    }
+    a{
+      color: #fff;
+      display: block;
+      border-radius: 10px;
+      padding: 5px 20px 30px;
+
+      position: relative;
+      font-weight: bold;
+      @include mediaPC{
+        display: flex;
+        align-items: center;
+        height: 100px;
+        padding: 0 20px;
+      }
+      @include mediaSP{
+        text-align: center;
+      }
+      @include trans;
+      @include mediaPC{
+        &:hover{
+          background: #fff;
+        }
+      }
+      span{
+        font-size: 22px;
+        @include mediaPC{
+          font-size: 46px;
+        }
+      }
+      h2{
+        font-size: 15px;
+        @include mediaPC{
+          text-align: left;
+
+          font-size: 22px;
+          margin: 0 40px 0 20px;
+        }
+      }
+
+      &::after{
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0;
+        @include trans;
+        @include mediaPC{
+          border-left: 10px solid #fff;
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          right: 30px;
+        }
+        @include mediaSP{
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 6px solid #fff;
+          left: 50%;
+          margin-left: -5px;
+          bottom: 12px;
+        }
+      }
+      @include mediaPC{
+        &:hover{
+          &::after{
+            right: 35px;
+          }
+        }
+      }
+    }
+    p{
+      margin: 10px 0;
+      @include mediaSP{
+        font-size: 13px;
+        margin: 10px 0 20px;
+      }
+    }
+  }
+}
+
+
+/*====================================================================
+お電話もしくはFAXでのお問い合わせはこちらからお願いします。
+====================================================================*/
+
+
+
+.contact_tel {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 10px 0;
+  margin: 10px 0;
+  .contact_tel_tit{
+    font-size: 20px;
+    margin: 20px 0;
+    font-weight: bold;
+    @include mediaSP{
+      font-size: 15px;
+    }
+  }
+
+  .contact_tel_txt{
+    margin: 20px 0;
+  }
+
+  .txt_tel,.txt_fax{
+    max-width: 900px;
+    margin: 10px auto;
+    @include mediaPC{
+      display: flex;
+      align-items: center;
+
+    }
+    .txt_icon{
+      background: #000;
+      color: #fff;
+      padding:2px 10px;
+      font-weight: bold;
+      margin: 0 10px 0 0;
+      font-size: 13px;
+    }
+    h3{
+      font-size: 26px;
+      display: flex;
+      align-items: center;
+      @include mediaSP{
+        font-size: 16px;
+      }
+
+      span{
+        font-weight: normal;
+        font-size: 20px;
+        @include mediaSP{
+          font-size: 14px;
+        }
+      }
+    }
+    p{
+      @include mediaPC{
+        padding: 0 0 0 10px;
+        border-left: 1px solid #000;
+      }
+      span{
+        color: #FA071A;
+        margin:0 10px ;
+      }
+    }
+  }
+
+}
+
+.contact_message {
+  color: #FA071A;
+  max-width: 960px;
+  margin: 10px auto;
+  text-align: left;
+}
+
+
+/*====================================================================
+イベントご来場のみなさまへ  展示会の図録購入希望の方へ
+====================================================================*/
+
+
+.for_wrap {
+  text-align: left;
+  margin: 40px 0;
+  @include mediaPC{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 80px 0;
+  }
+  .for_evnet,.for_catalog{
+    @include mediaPC{
+      width: 46%;
+    }
+
+    p{
+      margin: 20px 0;
+
+    }
+    a{
+      font-size: 20px;
+      font-weight: bold;
+      @include mediaSP{
+        font-size: 15px;
+        text-align: left;
+      }
+    }
+  }
+  .for_catalog{
+    margin: 40px 0;
+  }
+
+  h3{
+    border-bottom: 1px solid #000;
+
+    padding: 0 0 4px;
+    span{
+      position: relative;
+      &::after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 10px;
+        background: #000;
+        left: 0;
+        bottom: -16px;
+      }
+    }
+  }
+  div{
+    a{
+      color: #fff;
+      background-color: #32373c;
+      padding: 10px;
+      text-align: center;
+      position: relative;
+      display: block;
+      border: 1px solid #32373c;
+      @include trans;
+      &::before, &::after{
+        content: "";
+        position: absolute;
+        @include trans;
+      }
+      &::before{
+        right: 30px;
+        width: 30px;
+        height: 2px;
+        background: #fff;
+        top: 50%;
+        margin-top: -1px;
+        @include mediaSP{
+          right: 26px;
+          width: 20px;
+          height: 1px;
+          top: 49%;
+        }
+      }
+      &::after{
+        right: 26px;
+        width: 14px;
+        height: 14px;
+        border-top: 2px solid #fff;
+        border-right: 2px solid #fff;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        top: 17px;
+        @include mediaSP{
+          right: 20px;
+          width: 10px;
+          height: 10px;
+          border-top: 1px solid #fff;
+          border-right: 1px solid #fff;
+          top: 15px;
+        }
+      }
+      &:hover{
+        color: #32373c;
+        background-color: #fff;
+        &::before{
+          right: 35px;
+          background: #32373c;
+        }
+        &::after{
+          right: 31px;
+          border-top: 2px solid #32373c;
+          border-right: 2px solid #32373c;
+        }
+      }
+    }
+  }
+}
+
+
+/*====================================================================
+NHKの番組に関するお問い合わせ
+====================================================================*/
+
+.about_program {
+  text-align: left;
+  margin: 50px 0;
+  .for_evnet,.for_catalog{
+    width: 46%;
+    p{
+      margin: 20px 0;
+    }
+  }
+  p.about_program_txt{
+    margin: 30px 0;
+  }
+  h3{
+    border-bottom: 1px solid #000;
+
+    padding: 0 0 4px;
+    span{
+      position: relative;
+      &::after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 10px;
+        background: #000;
+        left: 0;
+        bottom: -16px;
+      }
+    }
+  }
+  p{
+    margin: 10px 0;
+    @include mediaSP{
+      margin: 0;
+    }
+  }
+}
+
+.program_icon {
+
+  @include mediaPC{
+    display: flex;
+    align-items: self-start;
+  }
+  h4{
+    font-size: 22px;
+    width: calc(100% - 170px);
+    margin: 0 0 0 30px;
+    @include mediaSP{
+      font-size: 17px;
+      width: calc(100% - 85px);
+      margin: 0 0 0 10px;
+    }
+    span{
+      font-size: 18px;
+      @include mediaSP{
+        font-size: 14px;
+        margin: 5px 0;
+        display: block;
+      }
+      a{
+        position: relative;
+        &::after{
+          content: "";
+          position: absolute;
+          width: 0%;
+          background: #000;
+          height: 1px;
+          left: 0;
+          bottom: -5px;
+          @include trans;
+        }
+        &:hover{
+          &::after{
+            width: 100%;
+          }
+        }
+      }
+      b{
+        font-size: 14px;
+        background: #000;
+        color: #fff;
+        padding: 5px;
+        margin: 0 10px 0 0;
+        @include mediaSP{
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+.program_hp{
+  @include mediaPC{
+    width: 49%;
+  }
+  display: flex;
+
+  align-items: center;
+  div{
+    width: 120px;
+    @include mediaSP{
+      width: 75px;
+    }
+  }
+}
+
+
+.program_tel_wrap{
+  @include mediaPC{
+    width: 49%;
+  }
+  @include mediaSP{
+    margin: 10px 0;
+  }
+  .program_tel{
+    display: flex;
+    align-items: center;
+    div{
+      width: 120px;
+      @include mediaSP{
+        width: 75px;
+      }
+    }
+  }
+}
+
+.program_tel_message{
+  margin: 20px 0 0;
+}

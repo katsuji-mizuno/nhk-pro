@@ -1,0 +1,48 @@
+@charset 'utf-8';
+@import 'mixin';
+
+
+.company_image {
+  max-width: 1320px;
+  margin: 100px auto;
+  a{
+    display: block;
+    img{
+      @include trans;
+    }
+    &:hover{
+      img{
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+body.company{
+  ul.tab{
+    .event{
+      &.active{
+        a{
+          &::before{
+            transform: rotate(0deg);
+          }
+        }
+      }
+    }
+    .company{
+      a{
+        &::before{
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+  .tab_area {
+    &#tab1 {
+      display:none;
+    }
+    &#tab2 {
+      display:block;
+    }
+  }
+}

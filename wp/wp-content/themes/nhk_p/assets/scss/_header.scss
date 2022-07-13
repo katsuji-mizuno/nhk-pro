@@ -1,0 +1,488 @@
+/*----------------------------------------------------
+siteHead
+----------------------------------------------------*/
+#siteHead {
+  width: 100%;
+  @include trans;
+}
+
+/*----------------------------------------------------
+一番上のロゴと「お問い合わせ・サイトマップ・English」のエリア
+----------------------------------------------------*/
+.header_logo_wrap{
+  background: #fff;
+  @include mediaPC{
+    border-bottom: 1px solid #ccc;
+
+  }
+  @include mediaSP{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    height: 60px;
+  }
+}
+
+.header_logo{
+  display: flex;
+  justify-content: space-between;
+  max-width: 1320px;
+  padding: 0 20px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.topright_links{
+  ul{
+    display: flex;
+    background: #FBFBFB;
+    padding: 10px 0px 10px 10px;
+    font-size: 14px;
+  }
+  li{
+    margin: 0 15px;
+    a{
+      color:#000;
+      position: relative;
+      padding: 5px;
+      &::before{
+        content: "";
+        position: absolute;
+        border-top: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        border-left: 5px solid #1D2742;
+        left: -10px;
+        top: 9px;
+        @include trans;
+      }
+      &:hover{
+        &::before{
+          left: -6px;
+        }
+      }
+    }
+  }
+  @include mediaSP{
+    display: none;
+  }
+}
+
+.logo {
+  margin: 12px 0;
+  width: 240px;
+  @include mediaSP{
+    width:180px;
+  }
+}
+
+/*----------------------------------------------------
+ハンバーガーメニュー
+----------------------------------------------------*/
+.menu {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: 99;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  @include trans;
+
+  span{
+    display: block;
+    position: absolute;
+    background: #3E3E3E;
+    width: 30px;
+    height: 2px;
+    right: 20px;
+    opacity:1;
+    transform: rotate(0deg);
+    @include trans;
+    &:nth-child(1) { top: 20px;}
+    &:nth-child(2) { top: 30px;}
+    &:nth-child(3) { top: 40px;}
+  }
+  &.open span{
+    &:nth-child(1){  top: 30px; transform: rotate(-45deg); }
+    &:nth-child(2){ display: none; }
+    &:nth-child(3){  top: 30px; transform: rotate(45deg); }
+  }
+  &:hover{
+    span{
+      &:nth-child(1) { top: 24px;}
+      &:nth-child(3) { top: 36px;}
+    }
+    &.open span{
+      &:nth-child(1){  top: 30px; transform: rotate(-30deg); }
+      &:nth-child(3){  top: 30px; transform: rotate(30deg); }
+    }
+  }
+  @include mediaPC{
+    display: none;
+  }
+
+}
+
+/*----------------------------------------------------
+ハンバーガーメニューの内部
+----------------------------------------------------*/
+
+#gNav {
+    position: absolute;
+    top: -400vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:#F4F4F4;;
+    z-index: 2;
+    @include trans;
+    &.open {
+      top: 60px;
+      height: 100vh;
+      overflow: scroll;
+    }
+    @include mediaPC{
+      display: none;
+    }
+  }
+
+.gNav_inner{
+  height: 100vh;
+  padding: 0 0 200px;
+  dl{
+    background: #fff;
+    margin: -20px 0 110px 50px;
+    box-shadow: 1px 1px 10px #ccc;
+    padding: 60px 0px 80px 40px;
+    font-weight: bold;
+
+  }
+  dt{
+    color: #fff;
+    text-align: left;
+    padding: 5px 0 5px 20px;
+    &.events{
+      background: #E54B53;
+    }
+    &.company{
+      background: #19A7B3;
+      margin: 60px 0 0;
+    }
+  }
+  dd{
+    text-align: left;
+    padding: 0 0 0 20px;
+    &.sub{
+      padding: 0;
+      margin: 40px 0;
+      li{
+        margin: 15px 0;
+      }
+    }
+    &.twitter{
+      padding: 0;
+      width: 50px;
+      height: 50px;
+    }
+  }
+  li{
+    margin: 10px 0;
+  }
+}
+
+
+
+/*----------------------------------------------------
+カテゴリー切り替えのタブ
+----------------------------------------------------*/
+
+/*---------リンク部分-----------*/
+
+ul.tab{
+  max-width: 1320px;
+  margin: 20px auto 0;
+  display: flex;
+  z-index: 0;
+  @include mediaSMLmin{
+    padding: 0 20px;
+  }
+  @include mediaSP{
+    justify-content: space-between;
+    padding: 42px 0 0;
+  }
+  .events,.company{
+    cursor:pointer;
+    width: 28%;
+    border-radius: 10px 10px 0px 0px;
+    @include mediaSMLmin{
+      max-width: 320px;
+    }
+    @include mediaSMLmax{
+      width: 50%;
+    }
+    span{
+      color: #fff;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      @include mediaSMLmin{
+        padding: 0 0 0 20px;
+        height: 45px;
+        font-size: 18px;
+      }
+      @include mediaSMLmax{
+        font-size: 15px;
+        padding: 0 0px 0 20px;
+        height: 45px;
+        width: 100%;
+      }
+      @include mediaSP{
+        padding: 0 0 0 10px;
+      }
+      &::before{
+        content: "";
+        position: absolute;
+        background-image: url(../images/header/arrow_circle.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 22px;
+        height: 22px;
+        left: 68px;
+        @include trans;
+        @include mediaSMLmax{
+          width: 16px;
+          height: 16px;
+          left: 30px;
+        }
+        @include mediaSP{
+          left: 10px;
+          top: 50%;
+          margin-top: -8px;
+        }
+      }
+      &:hover{
+        @include mediaSMLmin{
+          &::before{
+            width: 26px;
+            height: 26px;
+            left: 66px;
+          }
+        }
+      }
+    }
+    &.active{
+      span{
+        &::before{
+          transform: rotate(90deg);
+        }
+      }
+    }
+    @include mediaSMLmax{
+      width: 49%;
+    }
+  }
+  .events{
+    background: #E54B53;
+  }
+  .company{
+    background: #19A7B3;
+    margin: 0 0 0 10px;
+  }
+}
+
+.tab_area{ /*切り替え部分非表示*/
+  display: none;
+  &.active{
+    display: block;
+  }
+}
+
+/*---------タブの中身-----------*/
+
+.tab_content{ /*内容*/
+  clear: both;
+  overflow: hidden;
+}
+
+.tab_area {
+
+  &#tab1{
+    background: #E54B53;
+  }
+  &#tab2{
+    background: #19A7B3;
+  }
+
+  ul{
+    max-width: 1320px;
+    margin: 0px auto 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    @include mediaSMLmax{
+      flex-wrap: wrap;
+      padding: 5px 0;
+    }
+    li{
+      @include mediaSMLmin{
+        border-right:1px solid #fff ;
+        &:first-child{
+          border-left:1px solid #fff ;
+        }
+      }
+      padding: 0px 10px 0px;
+      @include trans;
+      &:hover{
+        background: #fff;
+        a{
+          color: #000;
+        }
+      }
+    }
+    a{
+      color: #fff;
+      position: relative;
+      width: 100%;
+      display: block;
+      font-weight: bold;
+    }
+  }
+  &#tab1{
+    li{
+      width: 25%;
+      @include mediaSMLmax{
+        width: 44%;
+        padding: 5px 0;
+        border-bottom: 1px solid #fff;
+
+      }
+      &.result{
+        @include mediaSMLmax{
+        border-bottom:none;
+        }
+      }
+    }
+  }
+  &#tab2{
+    ul{
+      justify-content: center;
+      flex-wrap: wrap;
+      @include mediaMIDmax{
+        padding: 0;
+        justify-content: space-around;
+
+      }
+      li{
+        margin:  5px 0;
+        @include mediaMIDmax{
+          margin: 0;
+          width: 42%;
+          border-left: none;
+          border-right: none;
+          border-bottom: 1px solid #fff;
+        }
+        &.com_result{
+          border-bottom: none;
+        }
+        a{
+          padding: 0px 18px;
+          display: flex;
+          justify-content: left;
+          @include mediaMIDmax{
+            padding: 5px 0px;
+            justify-content: center;
+
+          }
+        }
+      }
+
+    }
+
+  }
+}
+
+body{
+  &.exhibition{ #tab1{li.exhibition{background: #fff; a{ color: #000; }}}}
+  &.stage{ #tab1{li.stage{background: #fff; a{ color: #000; }}}}
+  &.family{ #tab1{li.family{background: #fff; a{ color: #000; }}}}
+  &.event{ #tab1{li.event{background: #fff; a{ color: #000; }}}}
+  &.result{ #tab1{li.result{background: #fff; a{ color: #000; }}}}
+
+  &.com_exhibition{ #tab2{li.com_exhibition{background: #fff; a{ color: #000; }}}}
+  &.com_stage{ #tab2{li.com_stage{background: #fff; a{ color: #000; }}}}
+  &.com_family{ #tab2{li.com_family{background: #fff; a{ color: #000; }}}}
+  &.com_event{ #tab2{li.com_event{background: #fff; a{ color: #000; }}}}
+  &.com_kouen{ #tab2{li.com_kouen{background: #fff; a{ color: #000; }}}}
+  &.com_movie{ #tab2{li.com_movie{background: #fff; a{ color: #000; }}}}
+  &.com_result{ #tab2{li.com_result{background: #fff; a{ color: #000; }}}}
+}
+
+
+/*----------------------------------------------------
+「展覧会図録・講師」リンク
+----------------------------------------------------*/
+.catalog_links {
+  max-width: 1320px;
+  position: relative;
+  margin: 0 auto;
+  @include mediaMIDmax{
+    right: 10px;
+  }
+  @include mediaSP{
+    right: 0;
+  }
+  ul{
+    position: absolute;
+    display: flex;
+    @include mediaSMLmin{
+      right: 0;
+      top: -45px;
+    }
+  }
+  li{
+    &:last-child{
+      @include mediaSMLmin{
+        margin: 0 0 0 10px;
+      }
+    }
+  }
+  a{
+    font-size: 14px;
+    border: #000 1px solid;
+    border-radius: 10px;
+    padding: 5px 35px 5px 15px;
+    background: #F1F1F1;
+    display: block;
+    color: #000;
+    font-weight: bold;
+    position: relative;
+    @include mediaSMLmax{
+      font-size: 14px
+    }
+    @include trans;
+    &::after{
+      content: "";
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      width: 12px;
+      height: 16px;
+      background-image: url(../images/header/arrow_r.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-top: -8px;
+      @include trans;
+    }
+    &:hover{
+      background: #000;
+      color: #F1F1F1;
+      &::after{
+        right: 20px;
+        background-image: url(../images/header/arrow_r_on.png);
+      }
+    }
+  }
+}
